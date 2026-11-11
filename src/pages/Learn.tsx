@@ -5,6 +5,7 @@ import { useStore } from '../lib/store'
 import { go } from '../router'
 import { Bar, Button, Card, Chip, Header, Rich, levelTone, pct } from '../components/ui'
 import { Visual } from '../components/Visuals'
+import { PatternIllustration, CandleBuilder } from '../components/CandleSVG'
 import { MCQ, QuizRunner, QuizSummary, type QuizResult } from '../components/Quiz'
 import { PASS } from '../lib/stats'
 
@@ -116,6 +117,13 @@ function BlockView({ b, onCheck }: { b: Block; onCheck: (id: string, c: boolean)
       return <div className={`mb-3 flex gap-2 rounded-xl border p-3 text-sm leading-relaxed ${cls}`}><span>{icon}</span><span><Rich text={b.text} /></span></div>
     }
     case 'check': return <MCQ q={b.q} onChecked={(c) => onCheck(b.q.id, c)} />
+    case 'pattern': return <figure className="mb-3 rounded-2xl border border-line bg-card p-3"><PatternIllustration id={b.id} /></figure>
+    case 'widget': return b.id === 'candle-builder' ? <CandleBuilder /> : null
+    case 'link': return (
+      <a href={b.href} className="mb-3 flex items-center justify-between gap-2 rounded-xl border border-accent/40 bg-accent/10 px-3 py-3 text-sm font-semibold text-accent">
+        <span>{b.text}</span><span aria-hidden>→</span>
+      </a>
+    )
   }
 }
 

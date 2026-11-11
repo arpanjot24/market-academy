@@ -7,13 +7,15 @@
     "build": "vite build",
     "preview": "vite preview --port 4173 --strictPort",
     "icons": "node scripts/make-icons.mjs",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "test": "node tests/run.ts"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "module",
   "dependencies": {
+    "lightweight-charts": "^5.3.0",
     "react": "^19.3.1",
     "react-dom": "^19.3.1"
   },

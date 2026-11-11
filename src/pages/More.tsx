@@ -9,8 +9,8 @@ export const sections: { key: string; icon: string; title: string; href: string;
   { key: 'home', icon: '🏠', title: 'Home dashboard', href: '/' },
   { key: 'learn', icon: '📚', title: 'Learn', href: '/learn' },
   { key: 'market', icon: '📈', title: 'Live market', href: '/soon/market', phase: 3 },
-  { key: 'candles', icon: '🕯️', title: 'Candle academy', href: '/soon/candles', phase: 2 },
-  { key: 'technical', icon: '📊', title: 'Technical analysis', href: '/soon/technical', phase: 2 },
+  { key: 'candles', icon: '🕯️', title: 'Candle academy', href: '/candles' },
+  { key: 'technical', icon: '📊', title: 'Technical analysis', href: '/technical' },
   { key: 'fundamental', icon: '🏢', title: 'Fundamental analysis', href: '/soon/fundamental', phase: 3 },
   { key: 'simulator', icon: '🎮', title: 'Trading simulator', href: '/soon/simulator', phase: 4 },
   { key: 'portfolio', icon: '💼', title: 'Virtual portfolio', href: '/soon/portfolio', phase: 4 },
@@ -38,8 +38,6 @@ export function MorePage() {
 }
 
 const soon: Record<string, { title: string; phase: number; items: string[]; data: string }> = {
-  candles: { title: 'Candle academy', phase: 2, items: ['Candle anatomy: open, high, low, close, body, wicks, volume, timeframe', '7 single-candle and 11 multi-candle patterns with illustrations', 'Psychology, confirmation and failure scenarios for each pattern', 'Live candle interpreter that separates developing, confirmed and failed patterns', 'Historical replay, one candle at a time'], data: 'Uses free historical price data, clearly labelled with its source and date. Replay is a simulation of past data, not live trading.' },
-  technical: { title: 'Technical analysis lab', phase: 2, items: ['SMA, EMA, RSI, MACD, Bollinger Bands, VWAP, ATR, ADX, Stochastic, volume', 'Fibonacci retracement', 'Toggle indicators on an interactive chart', 'What each measures, how it is calculated, limitations and common mistakes'], data: 'Indicators are calculated inside the app from free historical data — no paid services.' },
   market: { title: 'Indian market dashboard', phase: 3, items: ['NIFTY 50, BANK NIFTY, SENSEX and sector indices', 'Stock search and watchlists', 'Daily changes, historical prices, volume, highs and lows', 'Optional US markets section'], data: 'Only legitimate free sources (such as TradingView’s free widgets and free historical datasets). Data will be labelled delayed or historical with timestamps — never presented as real-time unless verified.' },
   fundamental: { title: 'Fundamental analysis', phase: 3, items: ['Reading balance sheets, P&L and cash flow statements', 'Annual reports and quarterly earnings', 'Management quality, governance and competitive advantages', 'Comparing companies in the same sector'], data: 'Real Indian companies as examples, with the date and source of every number. No invented financials.' },
   news: { title: 'Market news & daily briefing', phase: 3, items: ['Major Indian market moves, sectors, earnings, RBI decisions', 'Global markets and geopolitical developments', 'Why each development matters to investors'], data: 'Will link to free public sources (for example RSS feeds from exchanges, RBI and news publishers) showing publication dates. Nothing will be invented.' },

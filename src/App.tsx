@@ -1,4 +1,9 @@
-import { useEffect, useState, type ReactElement } from 'react'
+import { lazy, Suspense, useEffect, useState, type ReactElement } from 'react'
+import { ChartsHub, CandleAcademy, PatternPage, PatternQuizPage } from './pages/Candles'
+
+// Chart pages load the chart library on demand, keeping the first load fast.
+const InterpreterPage = lazy(() => import('./pages/Interpreter'))
+const TechLabPage = lazy(() => import('./pages/TechLab'))
 import { useRoute, go } from './router'
 import { useStore } from './lib/store'
 import { HomePage } from './pages/Home'
@@ -41,15 +46,15 @@ const Icon = ({ d }: { d: string }) => (
 const tabs = [
   { key: 'home', label: 'Home', href: '/', d: 'M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6h-6v6H4a1 1 0 01-1-1z' },
   { key: 'learn', label: 'Learn', href: '/learn', d: 'M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 5v16M8 7h7' },
+  { key: 'charts', label: 'Charts', href: '/charts', d: 'M7 4v16M7 8h-2v8h2M17 3v18M17 7h-2v6h2M12 6v12M12 10h-2v4h2' },
   { key: 'glossary', label: 'Glossary', href: '/glossary', d: 'M11 4a7 7 0 105.3 11.6L21 20M11 8v6M8 11h6' },
-  { key: 'progress', label: 'Progress', href: '/progress', d: 'M4 20V10M10 20V4M16 20v-7M22 20H2' },
   { key: 'more', label: 'More', href: '/more', d: 'M4 6h16M4 12h16M4 18h16' },
 ]
 
 function activeTab(path: string) {
   if (path.startsWith('/learn') || path.startsWith('/lesson')) return 'learn'
   if (path.startsWith('/glossary')) return 'glossary'
-  if (path.startsWith('/progress') || path.startsWith('/review')) return 'progress'
+  if (['/charts', '/candles', '/pattern', '/interpreter', '/technical'].some((p) => path.startsWith(p))) return 'charts'
   if (path === '/' || path === '') return 'home'
   return 'more'
 }
@@ -58,7 +63,8 @@ export default function App() {
   useTheme()
   const online = useOnline()
   const path = useRoute()
-  const [, a, b] = path.split('/')
+  const [, a, b, c] = path.split('/')
+  const loading = <div className="py-16 text-center text-muted">Loading charts…</div>
   let page: ReactElement
   switch (a ?? '') {
     case '': page = <HomePage />; break
@@ -71,6 +77,12 @@ export default function App() {
     case 'more': page = <MorePage />; break
     case 'settings': page = <SettingsPage />; break
     case 'soon': page = <SoonPage id={b} />; break
+    case 'charts': page = <ChartsHub />; break
+    case 'candles': page = <CandleAcademy />; break
+    case 'pattern': page = <PatternPage key={b} id={b} />; break
+    case 'pattern-quiz': page = <PatternQuizPage />; break
+    case 'interpreter': page = <Suspense fallback={loading}><InterpreterPage key={`${b}-${c}`} insId={b} at={c} /></Suspense>; break
+    case 'technical': page = <Suspense fallback={loading}><TechLabPage key={b} sel={b} /></Suspense>; break
     default: page = <NotFound />
   }
   const active = activeTab(path)

@@ -18,6 +18,9 @@ export type Block =
   | { t: 'callout'; tone: 'tip' | 'warn' | 'info'; text: string }
   | { t: 'formula'; text: string }
   | { t: 'check'; q: Question }
+  | { t: 'pattern'; id: string }
+  | { t: 'widget'; id: string }
+  | { t: 'link'; text: string; href: string }
 
 export type StepKind = 'concept' | 'example' | 'numbers' | 'visual' | 'real' | 'check'
 

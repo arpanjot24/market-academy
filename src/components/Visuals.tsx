@@ -1,5 +1,6 @@
 // Educational illustrations. Colours come from theme tokens so they work in dark and light mode.
 import type { ReactElement } from 'react'
+import { PatternIllustration } from './CandleSVG'
 
 const T = 'fill-fg text-[11px]'
 const M = 'fill-muted text-[10px]'
@@ -241,6 +242,9 @@ export const visuals: Record<string, () => ReactElement> = {
 }
 
 export function Visual({ id, caption }: { id: string; caption?: string }) {
+  if (id.startsWith('pattern:')) {
+    return <figure className="my-3 rounded-2xl border border-line bg-card p-3"><PatternIllustration id={id.slice(8)} /></figure>
+  }
   const V = visuals[id]
   if (!V) return null
   return (

@@ -1,6 +1,8 @@
 import { module1Lessons } from './module1'
 import { module2Lessons } from './module2'
 import { module3Lessons } from './module3'
+import { module4Lessons, module5Lessons } from './module45'
+import { patternIdQuestions, patterns } from './patterns'
 import { terms, glossaryQuestions } from './glossary'
 import type { Lesson, LessonDef, Module, Question } from './types'
 
@@ -12,12 +14,12 @@ export const modules: Module[] = [
   mk('m1', 1, 'Stock market fundamentals', 'Shares, exchanges, IPOs, SEBI, demat accounts, indices and order types.', module1Lessons),
   mk('m2', 2, 'Economics of the stock market', 'Inflation, RBI, bond yields, GDP, the rupee, oil, institutions and psychology.', module2Lessons),
   mk('m3', 3, 'Financial terminology', 'The ratios used to analyse companies, explained with worked numbers.', module3Lessons),
+  mk('m4', 4, 'Candlestick education', 'Candle anatomy, 19 patterns, and how patterns develop, confirm and fail.', module4Lessons),
+  mk('m5', 5, 'Technical indicators', 'SMA, EMA, RSI, MACD, Bollinger Bands, VWAP, Fibonacci, ATR, ADX, stochastic and volume.', module5Lessons),
 ]
 
 // Modules planned for later phases (shown on the Learn screen, clearly labelled).
 export const upcomingModules = [
-  { num: 4, title: 'Candlestick education', phase: 2 },
-  { num: 5, title: 'Technical indicators', phase: 2 },
   { num: 6, title: 'Fundamental analysis of companies', phase: 3 },
   { num: 7, title: 'Trading strategies', phase: 4 },
   { num: 8, title: 'Risk management, charges and tax', phase: 4 },
@@ -37,6 +39,12 @@ for (const l of allLessons) {
 for (const t of terms) {
   for (const q of [...t.questions, ...glossaryQuestions.filter((g) => g.id === `g-def-${t.id}`)]) {
     questionIndex[q.id] ??= { q, label: `Glossary: ${t.term}`, href: `#/glossary/${t.id}` }
+  }
+}
+
+for (const p of patterns) {
+  for (const q of [p.q, ...patternIdQuestions.filter((x) => x.id === `pid-${p.id}`)]) {
+    questionIndex[q.id] ??= { q, label: `Pattern: ${p.name}`, href: `#/pattern/${p.id}` }
   }
 }
 

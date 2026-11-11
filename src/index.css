@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+@source inline("{fill,stroke,text}-{up,down,muted,fg}");
 
 :root {
   --bg: #f3f6fb; --card: #ffffff; --card2: #eef2f8; --line: #dde3ee;

@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { questionIndex, lessonById } from '../content'
+import { questionIndex, lessonById, terms } from '../content'
 import { useStore } from '../lib/store'
 import { computeStats } from '../lib/stats'
 import { nextDue, INTERVAL_DAYS } from '../lib/srs'
@@ -22,7 +22,7 @@ export function ProgressPage() {
             <span className="text-muted">Lessons</span><span className="font-semibold tabular">{st.completed}/{st.total}</span>
             <span className="text-muted">Avg best score</span><span className="font-semibold tabular">{st.completed ? pct(st.avg) : '—'}</span>
             <span className="text-muted">Accuracy</span><span className="font-semibold tabular">{st.totalAnswers ? pct(st.accuracy) : '—'}</span>
-            <span className="text-muted">Terms read</span><span className="font-semibold tabular">{st.termsViewed}/20</span>
+            <span className="text-muted">Terms read</span><span className="font-semibold tabular">{st.termsViewed}/{terms.length}</span>
             <span className="text-muted">Best streak</span><span className="font-semibold tabular">{state.streak.best} day{state.streak.best === 1 ? '' : 's'}</span>
           </div>
         </div>
@@ -71,7 +71,7 @@ export function ProgressPage() {
         <div className="divide-y divide-line rounded-2xl border border-line bg-card">
           {recent.map((r, i) => (
             <div key={i} className="flex items-center justify-between gap-3 px-4 py-2.5 text-sm">
-              <span className="min-w-0 truncate">{r.id === 'glossary' ? 'Glossary quiz' : r.id === 'review' ? 'Revision session' : lessonById[r.id]?.title ?? r.id}</span>
+              <span className="min-w-0 truncate">{r.id === 'glossary' ? 'Glossary quiz' : r.id === 'review' ? 'Revision session' : r.id === 'pattern-quiz' ? 'Pattern identification quiz' : lessonById[r.id]?.title ?? r.id}</span>
               <span className={`shrink-0 font-semibold tabular ${r.score / r.total >= 0.7 ? 'text-up' : 'text-warn'}`}>{r.score}/{r.total}</span>
             </div>
           ))}

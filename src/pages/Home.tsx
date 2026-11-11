@@ -28,7 +28,7 @@ export function HomePage() {
         </div>
       </div>
 
-      <Card className="mb-3">
+      <Card className="mb-3" onClick={() => go('/progress')}>
         <div className="flex items-center gap-4">
           <Ring value={st.progress} size={72} />
           <div className="min-w-0 flex-1">
@@ -48,7 +48,7 @@ export function HomePage() {
         </Card>
       ) : (
         <Card className="mb-3 border-up/40 bg-up/10">
-          <div className="font-semibold text-up">All Phase 1 lessons completed 🎉</div>
+          <div className="font-semibold text-up">All available lessons completed 🎉</div>
           <div className="text-sm text-muted">Keep your knowledge fresh with revision and retake weak topics.</div>
         </Card>
       )}
@@ -63,6 +63,12 @@ export function HomePage() {
           <div className="text-sm text-muted">weak topics to strengthen</div>
         </Card>
       </div>
+
+      <Card className="mb-3" onClick={() => go('/charts')}>
+        <div className="text-xs font-semibold uppercase tracking-wide text-up">New · Charts</div>
+        <div className="mt-1 text-base font-semibold">Candle interpreter, replay and indicator lab</div>
+        <div className="mt-0.5 text-sm text-muted">Step through charts candle by candle and see every pattern explained.</div>
+      </Card>
 
       <Card className="mb-3" onClick={() => go(`/glossary/${tod.id}`)}>
         <div className="text-xs font-semibold uppercase tracking-wide text-warn">Term of the day</div>
@@ -82,8 +88,8 @@ export function HomePage() {
       <div className="grid gap-2">
         {[
           ['Phase 1', 'Lessons, glossary, quizzes, revision, progress', 'Available'],
-          ['Phase 2', 'Candlestick charts, pattern illustrations, replay, indicators', 'Next'],
-          ['Phase 3', 'Market dashboard, company analysis, news, watchlists', 'Planned'],
+          ['Phase 2', 'Candlestick charts, pattern illustrations, replay, indicators', 'Available'],
+          ['Phase 3', 'Market dashboard, company analysis, news, watchlists', 'Next'],
           ['Phase 4', 'Paper trading, virtual portfolio, risk & analytics', 'Planned'],
         ].map(([p, d, s]) => (
           <div key={p} className="flex items-center gap-3 rounded-xl border border-line bg-card px-4 py-3">
@@ -93,7 +99,7 @@ export function HomePage() {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-center text-xs text-muted">Educational content only. Not investment advice. No live market data is shown in Phase 1.</p>
+      <p className="mt-4 text-center text-xs text-muted">Educational content only. Not investment advice. Charts currently use clearly labelled simulated practice data; no live market data yet.</p>
     </div>
   )
 }
