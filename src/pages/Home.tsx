@@ -64,8 +64,20 @@ export function HomePage() {
         </Card>
       </div>
 
+      <div className="mb-3 grid grid-cols-2 gap-3">
+        <Card onClick={() => go('/news')}>
+          <div className="text-xs font-semibold uppercase tracking-wide text-up">New</div>
+          <div className="mt-1 font-semibold">Daily briefing</div>
+          <div className="mt-0.5 text-xs text-muted">RBI, SEBI and market news — and why it matters</div>
+        </Card>
+        <Card onClick={() => go('/market')}>
+          <div className="text-xs font-semibold uppercase tracking-wide text-up">New</div>
+          <div className="mt-1 font-semibold">Market & stocks</div>
+          <div className="mt-0.5 text-xs text-muted">SENSEX, sectors, watchlists, company financials</div>
+        </Card>
+      </div>
       <Card className="mb-3" onClick={() => go('/charts')}>
-        <div className="text-xs font-semibold uppercase tracking-wide text-up">New · Charts</div>
+        <div className="text-xs font-semibold uppercase tracking-wide text-accent">Charts</div>
         <div className="mt-1 text-base font-semibold">Candle interpreter, replay and indicator lab</div>
         <div className="mt-0.5 text-sm text-muted">Step through charts candle by candle and see every pattern explained.</div>
       </Card>
@@ -89,8 +101,8 @@ export function HomePage() {
         {[
           ['Phase 1', 'Lessons, glossary, quizzes, revision, progress', 'Available'],
           ['Phase 2', 'Candlestick charts, pattern illustrations, replay, indicators', 'Available'],
-          ['Phase 3', 'Market dashboard, company analysis, news, watchlists', 'Next'],
-          ['Phase 4', 'Paper trading, virtual portfolio, risk & analytics', 'Planned'],
+          ['Phase 3', 'Market dashboard, company analysis, news, watchlists', 'Available'],
+          ['Phase 4', 'Paper trading, virtual portfolio, risk & analytics', 'Next'],
         ].map(([p, d, s]) => (
           <div key={p} className="flex items-center gap-3 rounded-xl border border-line bg-card px-4 py-3">
             <div className="w-16 shrink-0 text-sm font-semibold">{p}</div>
@@ -99,7 +111,7 @@ export function HomePage() {
           </div>
         ))}
       </div>
-      <p className="mt-4 text-center text-xs text-muted">Educational content only. Not investment advice. Charts currently use clearly labelled simulated practice data; no live market data yet.</p>
+      <p className="mt-4 text-center text-xs text-muted">Educational content only. Not investment advice. Market prices are end-of-day or delayed, never real-time. Practice charts use labelled simulated data.</p>
     </div>
   )
 }

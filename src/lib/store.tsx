@@ -8,10 +8,25 @@ export interface AnswerStat { correct: number; wrong: number; last: boolean; at:
 export interface SrsItem { box: number; due: number }
 export interface QuizLogItem { id: string; score: number; total: number; at: number }
 
+export interface Watchlist { id: string; name: string; symbols: string[] }
+export interface Worksheet {
+  id: string
+  symbol: string
+  name: string
+  sector: string
+  source: string
+  asOf: string
+  notes: string
+  fields: Record<string, number | undefined>
+  updatedAt: number
+}
+
 export interface AppState {
   version: 1
   createdAt: number
-  settings: { theme: Theme }
+  settings: { theme: Theme; showUS: boolean }
+  watchlists: Watchlist[]
+  worksheets: Record<string, Worksheet>
   lessons: Record<string, LessonProgress>
   answers: Record<string, AnswerStat>
   srs: Record<string, SrsItem>
@@ -25,7 +40,9 @@ export interface AppState {
 export const defaultState = (): AppState => ({
   version: 1,
   createdAt: Date.now(),
-  settings: { theme: 'dark' },
+  settings: { theme: 'dark', showUS: false },
+  watchlists: [{ id: 'main', name: 'My watchlist', symbols: [] }],
+  worksheets: {},
   lessons: {},
   answers: {},
   srs: {},
@@ -46,6 +63,8 @@ export function normalize(raw: any): AppState {
     version: 1,
     createdAt: typeof raw.createdAt === 'number' ? raw.createdAt : d.createdAt,
     settings: { ...d.settings, ...obj(raw.settings, {}) },
+    watchlists: Array.isArray(raw.watchlists) && raw.watchlists.length ? raw.watchlists : d.watchlists,
+    worksheets: obj(raw.worksheets, {}) as AppState['worksheets'],
     lessons: obj(raw.lessons, {}) as AppState['lessons'],
     answers: obj(raw.answers, {}) as AppState['answers'],
     srs: obj(raw.srs, {}) as AppState['srs'],
@@ -70,6 +89,17 @@ function touchStreak(s: AppState): AppState {
 function makeActions(set: (fn: (s: AppState) => AppState) => void) {
   return {
     setTheme: (theme: Theme) => set((s) => ({ ...s, settings: { ...s.settings, theme } })),
+    setShowUS: (showUS: boolean) => set((s) => ({ ...s, settings: { ...s.settings, showUS } })),
+    toggleWatch: (listId: string, symbol: string) =>
+      set((s) => ({
+        ...s,
+        watchlists: s.watchlists.map((w) => (w.id !== listId ? w : { ...w, symbols: w.symbols.includes(symbol) ? w.symbols.filter((x) => x !== symbol) : [...w.symbols, symbol] })),
+      })),
+    addWatchlist: (name: string) => set((s) => ({ ...s, watchlists: [...s.watchlists, { id: `w${Date.now()}`, name, symbols: [] }] })),
+    renameWatchlist: (id: string, name: string) => set((s) => ({ ...s, watchlists: s.watchlists.map((w) => (w.id === id ? { ...w, name } : w)) })),
+    deleteWatchlist: (id: string) => set((s) => (s.watchlists.length <= 1 ? s : { ...s, watchlists: s.watchlists.filter((w) => w.id !== id) })),
+    saveWorksheet: (w: Worksheet) => set((s) => ({ ...s, worksheets: { ...s.worksheets, [w.id]: { ...w, updatedAt: Date.now() } } })),
+    deleteWorksheet: (id: string) => set((s) => { const ws = { ...s.worksheets }; delete ws[id]; return { ...s, worksheets: ws } }),
     setStep: (lessonId: string, step: number) =>
       set((s) => {
         const cur = s.lessons[lessonId] ?? { step: 0, attempts: 0 }

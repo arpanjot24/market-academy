@@ -8,13 +8,15 @@ import { NotFound } from './Learn'
 export const sections: { key: string; icon: string; title: string; href: string; phase?: number }[] = [
   { key: 'home', icon: '🏠', title: 'Home dashboard', href: '/' },
   { key: 'learn', icon: '📚', title: 'Learn', href: '/learn' },
-  { key: 'market', icon: '📈', title: 'Live market', href: '/soon/market', phase: 3 },
+  { key: 'market', icon: '📈', title: 'Market dashboard', href: '/market' },
   { key: 'candles', icon: '🕯️', title: 'Candle academy', href: '/candles' },
   { key: 'technical', icon: '📊', title: 'Technical analysis', href: '/technical' },
-  { key: 'fundamental', icon: '🏢', title: 'Fundamental analysis', href: '/soon/fundamental', phase: 3 },
+  { key: 'fundamental', icon: '🏢', title: 'Fundamental analysis', href: '/fundamentals' },
   { key: 'simulator', icon: '🎮', title: 'Trading simulator', href: '/soon/simulator', phase: 4 },
   { key: 'portfolio', icon: '💼', title: 'Virtual portfolio', href: '/soon/portfolio', phase: 4 },
-  { key: 'news', icon: '📰', title: 'Market news', href: '/soon/news', phase: 3 },
+  { key: 'news', icon: '📰', title: 'Market news & briefing', href: '/news' },
+  { key: 'watchlists', icon: '⭐', title: 'Watchlists', href: '/watchlists' },
+  { key: 'charts', icon: '🕯️', title: 'Charts & interpreter', href: '/charts' },
   { key: 'glossary', icon: '📖', title: 'Financial glossary', href: '/glossary' },
   { key: 'progress', icon: '🎯', title: 'Learning progress', href: '/progress' },
   { key: 'settings', icon: '⚙️', title: 'Settings & backup', href: '/settings' },
@@ -38,9 +40,6 @@ export function MorePage() {
 }
 
 const soon: Record<string, { title: string; phase: number; items: string[]; data: string }> = {
-  market: { title: 'Indian market dashboard', phase: 3, items: ['NIFTY 50, BANK NIFTY, SENSEX and sector indices', 'Stock search and watchlists', 'Daily changes, historical prices, volume, highs and lows', 'Optional US markets section'], data: 'Only legitimate free sources (such as TradingView’s free widgets and free historical datasets). Data will be labelled delayed or historical with timestamps — never presented as real-time unless verified.' },
-  fundamental: { title: 'Fundamental analysis', phase: 3, items: ['Reading balance sheets, P&L and cash flow statements', 'Annual reports and quarterly earnings', 'Management quality, governance and competitive advantages', 'Comparing companies in the same sector'], data: 'Real Indian companies as examples, with the date and source of every number. No invented financials.' },
-  news: { title: 'Market news & daily briefing', phase: 3, items: ['Major Indian market moves, sectors, earnings, RBI decisions', 'Global markets and geopolitical developments', 'Why each development matters to investors'], data: 'Will link to free public sources (for example RSS feeds from exchanges, RBI and news publishers) showing publication dates. Nothing will be invented.' },
   simulator: { title: 'Paper trading simulator', phase: 4, items: ['Configurable virtual capital, starting at ₹1,00,000', 'Virtual buy/sell, stop-loss, targets, position sizing', 'Risk/reward and Indian transaction-cost estimates', 'Trades judged on reasoning and risk management, not just profit'], data: 'Purely virtual. It will never connect to a real brokerage account.' },
   portfolio: { title: 'Virtual portfolio', phase: 4, items: ['Holdings and average purchase price', 'Realised and unrealised profit/loss, allocation', 'Win rate, average win/loss, maximum drawdown, total return'], data: 'Stored only on your phone, included in your backup file.' },
 }
@@ -116,9 +115,17 @@ export function SettingsPage() {
         ))}
       </div>
 
+      <h2 className="mb-2 text-sm font-semibold text-muted">Markets</h2>
+      <Card className="mb-5">
+        <label className="flex items-center justify-between gap-3 text-sm">
+          <span><b>Show US markets</b><span className="block text-xs text-muted">Adds a US tab (S&P 500, Nasdaq, Dow ETFs and large US stocks, delayed) to the Market dashboard.</span></span>
+          <input type="checkbox" checked={state.settings.showUS} onChange={(e) => actions.setShowUS(e.target.checked)} className="h-6 w-6 accent-[var(--accent)]" />
+        </label>
+      </Card>
+
       <h2 className="mb-2 text-sm font-semibold text-muted">Backup & restore</h2>
       <Card className="mb-5">
-        <p className="mb-3 text-sm text-muted">Your progress is saved only on this phone (IndexedDB). Export a backup file regularly, and import it to restore on a new phone.</p>
+        <p className="mb-3 text-sm text-muted">Your progress, watchlists and worksheets are saved only on this phone (IndexedDB). Export a backup file regularly, and import it to restore on a new phone.</p>
         <div className="grid gap-2">
           <Button onClick={exportData}>Export backup (JSON)</Button>
           <Button variant="secondary" onClick={() => fileRef.current?.click()}>Import backup</Button>
@@ -142,7 +149,8 @@ export function SettingsPage() {
 
       <h2 className="mb-2 text-sm font-semibold text-muted">About</h2>
       <Card className="mb-5 text-sm leading-relaxed text-muted">
-        <p className="mb-2"><b className="text-fg">Market Academy · Phase 1</b> — free, open-source tools only, no accounts, no ads, no tracking.</p>
+        <p className="mb-2"><b className="text-fg">Market Academy · Phase 3</b> — free, open-source tools only, no accounts, no ads. Charts by TradingView Lightweight Charts (Apache-2.0).</p>
+        <p className="mb-2">Market data: TradingView free widgets (BSE, end-of-day or delayed; NSE is not licensed for free widgets). News: public RSS feeds of RBI, SEBI, The Economic Times, Mint, Business Standard and Moneycontrol — headlines link to the original source. Practice charts use simulated data and are labelled as such.</p>
         <p className="mb-2">Educational content was written in November 2026 from general knowledge of Indian market rules in effect up to mid-2026. Rules, rates and charges change — verify current details at sebi.gov.in, nseindia.com, bseindia.com and rbi.org.in.</p>
         <p>Numerical examples use illustrative numbers unless a source is named. Nothing in this app is investment advice.</p>
       </Card>

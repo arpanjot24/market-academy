@@ -2,6 +2,7 @@ import { module1Lessons } from './module1'
 import { module2Lessons } from './module2'
 import { module3Lessons } from './module3'
 import { module4Lessons, module5Lessons } from './module45'
+import { module6Lessons } from './module6'
 import { patternIdQuestions, patterns } from './patterns'
 import { terms, glossaryQuestions } from './glossary'
 import type { Lesson, LessonDef, Module, Question } from './types'
@@ -16,11 +17,11 @@ export const modules: Module[] = [
   mk('m3', 3, 'Financial terminology', 'The ratios used to analyse companies, explained with worked numbers.', module3Lessons),
   mk('m4', 4, 'Candlestick education', 'Candle anatomy, 19 patterns, and how patterns develop, confirm and fail.', module4Lessons),
   mk('m5', 5, 'Technical indicators', 'SMA, EMA, RSI, MACD, Bollinger Bands, VWAP, Fibonacci, ATR, ADX, stochastic and volume.', module5Lessons),
+  mk('m6', 6, 'Fundamental analysis', 'Financial statements, annual reports, quality checks, governance, moats and valuation.', module6Lessons),
 ]
 
 // Modules planned for later phases (shown on the Learn screen, clearly labelled).
 export const upcomingModules = [
-  { num: 6, title: 'Fundamental analysis of companies', phase: 3 },
   { num: 7, title: 'Trading strategies', phase: 4 },
   { num: 8, title: 'Risk management, charges and tax', phase: 4 },
 ]

@@ -30,6 +30,8 @@ export default defineConfig({
       workbox: {
         globPatterns: ['**/*.{js,css,html,svg,png,woff2}'],
         navigateFallback: 'index.html',
+        // Latest news when online; the last saved copy when offline.
+        runtimeCaching: [{ urlPattern: /news\.json$/, handler: 'NetworkFirst', options: { cacheName: 'news', networkTimeoutSeconds: 6 } }],
       },
     }),
   ],

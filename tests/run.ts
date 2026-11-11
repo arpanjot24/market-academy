@@ -4,6 +4,7 @@ import { detectAt, patternStatus, partialCandle, trendBefore, shapeName } from '
 import { illustrations } from '../src/lib/chart/illustrations.ts'
 import { dailyCandles, intradayCandles, instruments } from '../src/lib/chart/sim.ts'
 import type { Candle } from '../src/lib/chart/types.ts'
+import { computeRatios } from '../src/lib/fundamentals.ts'
 
 let pass = 0, fail = 0
 const ok = (cond: boolean, name: string, extra = '') => { if (cond) pass++; else { fail++; console.log('FAIL', name, extra) } }
@@ -100,6 +101,19 @@ for (const [id, ill] of Object.entries(illustrations)) {
   ok(s(98.5, 108, 95.5, 95.5).startsWith('inverted'), 'preset shooting star shape', s(98.5, 108, 95.5, 95.5))
   ok(s(94, 106.2, 93.8, 106).startsWith('marubozu'), 'preset marubozu')
   ok(s(99, 106, 93, 101) === 'spinning top', 'preset spinning top')
+}
+
+// ---------- Fundamental ratios (worksheet) ----------
+{
+  const r = Object.fromEntries(computeRatios({ revenue: 1100, revenuePrev: 1000, ebitda: 220, ebit: 170, interest: 34, netProfit: 105, netProfitPrev: 100, equity: 700, debt: 300, cash: 100, cfo: 150, capex: 60, shares: 10, price: 210, dps: 4.2, promoter: 55, pledged: 0 }).map((x) => [x.key, x]))
+  ok(near(r.revG.value, 0.1) && near(r.profG.value, 0.05), 'growth ratios')
+  ok(near(r.roe.value, 0.15) && near(r.roce.value, 0.17) && near(r.de.value, 3 / 7) && near(r.cover.value, 5), 'returns, leverage, coverage')
+  ok(near(r.fcf.value, 90) && near(r.eps.value, 10.5) && near(r.pe.value, 20) && near(r.mcap.value, 2100), 'FCF, EPS, P/E, market cap')
+  ok(near(r.evEbitda.value, 2300 / 220) && near(r.dy.value, 0.02) && near(r.pb.value, 3), 'EV/EBITDA, yield, P/B')
+  ok(r.roe.verdict === 'good' && r.de.verdict === 'good' && r.cover.verdict === 'good' && r.revG.verdict === 'ok', 'verdict bands')
+  const bank = Object.fromEntries(computeRatios({ debt: 9000, equity: 1000, ebit: 500 }, true).map((x) => [x.key, x]))
+  ok(bank.de.value === null && bank.roce.value === null, 'D/E and ROCE suppressed for financials')
+  ok(computeRatios({}).every((x) => x.value === null), 'empty worksheet gives no numbers')
 }
 
 // ---------- Simulated data sanity ----------

@@ -1,0 +1,1317 @@
+{
+ "fetchedAt": "2026-11-11T13:44:13.492Z",
+ "feeds": [
+  {
+   "source": "RBI",
+   "ok": true,
+   "count": 10
+  },
+  {
+   "source": "SEBI",
+   "ok": true,
+   "count": 30
+  },
+  {
+   "source": "The Economic Times",
+   "ok": true,
+   "count": 50
+  },
+  {
+   "source": "Mint",
+   "ok": true,
+   "count": 35
+  },
+  {
+   "source": "Business Standard",
+   "ok": true,
+   "count": 35
+  },
+  {
+   "source": "Moneycontrol",
+   "ok": true,
+   "count": 4
+  }
+ ],
+ "items": [
+  {
+   "title": "Dollar firms as hot inflation, hawkish Fed talk lift rate-hike bets",
+   "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/dollar-firms-as-hot-inflation-hawkish-fed-talk-lift-rate-hike-bets/articleshow/135739033.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T13:17:36.000Z",
+   "category": "global"
+  },
+  {
+   "title": "Nasdaq futures rise nearly 2% as CoreWeave earnings calm AI spending fears",
+   "link": "https://economictimes.indiatimes.com/markets/us-stocks/news/nasdaq-futures-rise-nearly-2-as-coreweave-earnings-calm-ai-spending-fears/articleshow/135738901.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T13:13:58.000Z",
+   "category": "global"
+  },
+  {
+   "title": "S&P 500, Nasdaq futures gain as CoreWeave results ease AI jitters: Stock Market Live Updates",
+   "link": "https://economictimes.indiatimes.com/markets/us-stocks/wall-street-guide/stock-market-live-updates-dow-jones-nasdaq-sp-500-fed-anthropic-ipo-coreweave-nvidia-marvell-ai-chip-fed-rate-inflation-treasury-yield-news-11th-november-2026/liveblog/135739245.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T13:12:11.000Z",
+   "category": "global"
+  },
+  {
+   "title": "Fairfax Financial likely to exit IIFL Finance, sources say",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/news/fairfax-financial-likely-to-exit-iifl-finance-sources-say/articleshow/135738516.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T13:09:37.000Z",
+   "category": "other"
+  },
+  {
+   "title": "Sterling drops against firmer dollar as markets price in a hawkish Fed",
+   "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/sterling-drops-against-firmer-dollar-as-markets-price-in-a-hawkish-fed/articleshow/135738659.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T13:08:01.000Z",
+   "category": "global"
+  },
+  {
+   "title": "EAAA India Alternatives Q2 results 2026: Net profit jumps 27%; 140% interim dividend of ₹7/share; check record date",
+   "link": "https://www.livemint.com/market/stock-market-news/eaaa-india-alternatives-q2-results-2026-net-profit-jumps-27-140-interim-dividend-of-rs-7-share-check-record-date-11794399717392.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T13:06:42.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Anthropic IPO: A $1.4 trillion bet on the future of AI",
+   "link": "https://economictimes.indiatimes.com/markets/ipos/fpos/anthropic-ipo-a-1-4-trillion-bet-on-the-future-of-ai/videoshow/135738282.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T12:51:21.000Z",
+   "category": "ipo"
+  },
+  {
+   "title": "Conversion/Switch of Government of India Securities",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63958",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-11T12:40:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Realty firms' land acquisition falls 56% to 1,445 acres in Jan-Sep: Anarock",
+   "link": "https://economictimes.indiatimes.com/markets/digital-real-estate/realty-news/realty-firms-land-acquisition-falls-56-to-1445-acres-in-jan-sep-anarock/articleshow/135736891.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T12:10:24.000Z",
+   "category": "other"
+  },
+  {
+   "title": "NRIs can complete investment KYC from abroad starting Dec 3: What changes?",
+   "link": "https://www.business-standard.com/markets/news/nris-can-complete-investment-kyc-from-abroad-starting-dec-3-what-changes-126111101128_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T12:08:09.000Z",
+   "category": "other"
+  },
+  {
+   "title": "US Treasury rout hands India's 10-year bond its worst day in a month",
+   "link": "https://economictimes.indiatimes.com/markets/bonds/us-treasury-rout-hands-indias-10-year-bond-its-worst-day-in-a-month/articleshow/135736836.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T12:06:33.000Z",
+   "category": "other"
+  },
+  {
+   "title": "Reserve Money and Money Supply for the fortnight ended on October 31, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63957",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-11T11:55:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Top 2 stocks to buy for short-term: Canara Bank, Pine Labs by Nagaraj Shetti - Check stop loss, targets",
+   "link": "https://www.livemint.com/market/stock-market-news/top-2-stocks-to-buy-for-short-term-canara-bank-pine-labs-by-nagaraj-shetti-check-stop-loss-targets-11794397280619.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T11:53:08.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "PC Jeweller vs Kalyan Jewellers shares: Both delivered strong Q2 results but what to buy for better returns? Key levels",
+   "link": "https://www.livemint.com/market/stock-market-news/pc-jeweller-vs-kalyan-jewellers-shares-both-delivered-strong-q2-results-but-what-to-buy-for-better-returns-key-levels-11794394181636.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T11:42:22.000Z",
+   "category": "results"
+  },
+  {
+   "title": "This EPC stock under ₹15 hits 20% upper circuit after ₹510 crore bank guarantee release boosts order execution",
+   "link": "https://www.livemint.com/market/stock-market-news/this-epc-stock-under-rs-15-hits-20-upper-circuit-after-rs-510-crore-bank-guarantee-release-boosts-order-execution-11794395143697.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T11:32:28.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Gold or Silver? Which investment will offer higher returns after rates correction? What experts say; key levels to watch",
+   "link": "https://www.livemint.com/market/gold-or-silver-which-investment-will-offer-higher-returns-after-rates-correction-what-experts-say-key-levels-to-watch-11794394141742.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T11:20:51.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "Eternal's IPO investors sitting on 375% gains as stock hits new record high; from ₹76 price to ₹361, what changed?",
+   "link": "https://www.livemint.com/market/stock-market-news/eternals-ipo-investors-sitting-on-375-gains-as-stock-hits-new-record-high-from-rs-76-price-to-rs-361-what-changed-11794391062630.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T10:41:57.000Z",
+   "category": "ipo"
+  },
+  {
+   "title": "These 12 midcap stocks rally up to 30% in just one month",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/news/these-12-midcap-stocks-rally-up-to-30-in-just-one-month/slideshow/135734690.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T10:40:03.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Apollo Micro Systems shares surge 10%: Defence multibagger stock rallies 3,640% in 5 years; can it rise further?",
+   "link": "https://www.livemint.com/market/stock-market-news/apollo-micro-systems-shares-surge-10-defence-multibagger-stock-rallies-3-640-in-5-years-can-it-rise-further-11794390982550.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T10:39:46.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Rupee touches strongest since April as foreign inflows offset firm dollar",
+   "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-touches-strongest-since-april-as-foreign-inflows-offset-firm-dollar/articleshow/135734005.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T10:37:51.000Z",
+   "category": "flows"
+  },
+  {
+   "title": "More investors stopped SIPs than started new ones in October",
+   "link": "https://www.livemint.com/market/stock-market-news/sip-stoppage-ratio-october-2026-hits-18-month-high-amfi-data-11794386284354.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T10:21:49.000Z",
+   "category": "other"
+  },
+  {
+   "title": "MSCI Rejig: Adani Green, LIC, Coforge, Meesho shares set to enter India Standard Index; ICICI Life, PI Industries out?",
+   "link": "https://www.livemint.com/market/stock-market-news/msci-rejig-adani-green-lic-coforge-meesho-shares-set-to-enter-india-standard-index-icici-life-pi-industries-out-11794390119879.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T10:19:55.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "India equity mutual fund fund inflows cool as stocks sink to 18-month low",
+   "link": "https://www.livemint.com/market/stock-market-news/india-equity-mutual-fund-fund-inflows-cool-as-stocks-sink-to-18-month-low-11794390045561.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T09:46:36.000Z",
+   "category": "flows"
+  },
+  {
+   "title": "Up 70% in 6 months, Kissht parent OnEMI raises ₹832 cr from preferential issue; check who invested, price, performance",
+   "link": "https://www.livemint.com/market/stock-market-news/up-70-in-6-months-kissht-parent-onemi-raises-rs-832-cr-from-preferential-issue-check-who-invested-price-performance-11794386331109.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T09:23:00.000Z",
+   "category": "other"
+  },
+  {
+   "title": "Rentomojo climbs 10% to 52-wk high; what's behind gains as Q2 PAT dips 63%?",
+   "link": "https://www.business-standard.com/markets/news/rentomojo-climbs-10-to-52-wk-high-what-s-behind-gains-as-q2-pat-dips-63-126111100703_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T09:22:26.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Equity MF investments drop 14% to ₹33,000 crore on market volatility",
+   "link": "https://www.business-standard.com/markets/mutual-fund/equity-mf-investments-drop-14-to-33-000-crore-on-market-volatility-126111100637_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T08:56:59.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Moneyview shares are up 58% from IPO price, jump 4% today after BofA coverage - what it said, check price target",
+   "link": "https://www.livemint.com/market/moneyview-shares-are-up-58-from-ipo-price-jump-4-today-after-bofa-coverage-what-it-said-check-price-target-11794377585073.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T08:36:15.000Z",
+   "category": "ipo"
+  },
+  {
+   "title": "India's rich pivot to real assets after stock returns falter",
+   "link": "https://www.livemint.com/market/stock-market-news/indias-rich-pivot-to-real-assets-after-stock-returns-falter-11794384284327.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T08:23:06.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "BHEL shares up 3.5% on Power Grid order for Gujarat synchronous condensers",
+   "link": "https://www.business-standard.com/markets/news/bhel-shares-up-3-5-on-power-grid-order-for-gujarat-synchronous-condensers-126111100646_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T08:22:03.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Should you invest in HPCL, BPCL, IOCL and other OMC stocks now as oil not on the boil anymore; slips below $90/barrel",
+   "link": "https://www.livemint.com/market/stock-market-news/should-you-invest-in-hpcl-bpcl-iocl-and-other-omc-stocks-now-as-oil-not-on-the-boil-anymore-slips-below-90barrel-11794381942470.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T08:15:24.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "RIL, HDFC, Axis Bank, IndiGo, more: List of 12 stocks from Jefferies; shares to gain as FPIs embrace Indian markets",
+   "link": "https://www.livemint.com/market/stock-market-news/ril-hdfc-axis-bank-indigo-more-list-of-12-stocks-from-jefferies-shares-to-gain-as-fpis-embrace-indian-markets-11794382918824.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T08:14:54.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "‘Gen Z to drive India’s next Internet growth wave’: Why JPMorgan picked PhysicsWallah, Meesho, Groww shares over others",
+   "link": "https://www.livemint.com/market/stock-market-news/gen-z-to-drive-india-s-next-internet-growth-wave-why-jpmorgan-picked-physicswallah-meesho-groww-shares-over-others-11794381624965.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T08:14:07.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Treasury Bills: Full Auction Result",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63956",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-11T08:10:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Punjab National Bank share price soars 11% in two days; hits 52-week high",
+   "link": "https://www.business-standard.com/markets/news/punjab-national-bank-share-price-soars-11-in-two-days-hits-52-week-high-126111100580_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T07:51:43.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Bajaj Finance said set to launch up to $1.2 billion QIP as early as this week",
+   "link": "https://www.livemint.com/market/stock-market-news/bajaj-finance-said-set-to-launch-up-to-1-2-billion-qip-as-early-as-this-week-11794382537759.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T07:51:00.000Z",
+   "category": "other"
+  },
+  {
+   "title": "Siemens’ growth pipeline is strong. Can margins keep pace?",
+   "link": "https://www.livemint.com/market/mark-to-market/siemens-q2-results-order-growth-margin-pressure-stock-outlook-11794379013555.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T07:50:19.000Z",
+   "category": "other"
+  },
+  {
+   "title": "Bajaj Finance to launch share sale worth up to Rs 11,700 cr this week: Report",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/news/bajaj-finance-said-to-be-set-to-launch-up-to-1-2-billion-share-sale/articleshow/135729545.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T07:36:59.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Gold faces inflation headwinds on hawkish Fed tilt; $4,150 stays key hurdle",
+   "link": "https://www.business-standard.com/markets/news/gold-futures-gold-faces-inflation-headwinds-on-hawkish-fed-tilt-4-150-stays-key-hurdle-126111100555_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T07:32:14.000Z",
+   "category": "global"
+  },
+  {
+   "title": "91-Day, 182-Day and 364-Day T-Bill Auction Result: Cut-off",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63955",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-11T07:25:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Why Shakti Pumps shares are rising 11% today amid Sensex, Nifty rally? Buy for more returns? Target, upside, rationale",
+   "link": "https://www.livemint.com/market/stock-market-news/why-shakti-pumps-shares-are-rising-11-today-amid-sensex-nifty-rally-buy-for-more-returns-target-upside-rationale-11794377722022.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T07:22:17.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "CoreWeave stock jumps after earnings: 7 things driving the AI cloud company's rally",
+   "link": "https://economictimes.indiatimes.com/markets/us-stocks/news/coreweave-stock-jumps-after-earnings-7-things-driving-the-ai-cloud-companys-rally/slideshow/135729203.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T07:01:16.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Whirlpool gains 3% even as Q2 PAT sinks 40%; ICICI Sec maintains 'Reduce'",
+   "link": "https://www.business-standard.com/markets/news/whirlpool-gains-3-even-as-q2-pat-sinks-40-icici-sec-maintains-reduce-126111100531_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T07:00:34.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Nifty Bank index rallies 4% in two days, nears record high; here's why",
+   "link": "https://www.business-standard.com/markets/news/nifty-bank-index-rallies-4-in-two-days-nears-record-high-here-s-why-126111100463_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T06:57:51.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Once AI darling of shareholders, Nvidia sued by own stock buyers over CEO Jensen Huang affair; $420 bn lost in 2 days",
+   "link": "https://www.livemint.com/market/stock-market-news/once-ai-darling-of-shareholders-nvidia-sued-by-own-stock-buyers-over-ceo-jensen-huang-affair-420-bn-lost-in-2-days-11794377931484.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T06:56:45.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Railway stocks on fast track! RVNL, IRFC jump up to 10% amid Sensex, Nifty rise | What's behind momentum? Key levels",
+   "link": "https://www.livemint.com/market/stock-market-news/railway-stocks-on-fast-track-rvnl-irfc-jump-up-to-10-amid-sensex-nifty-rise-whats-behind-momentum-key-levels-11794378046674.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T06:47:14.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Nvidia Stock Sell-Off Deepens: Spy scandal, price target cuts put AI giant under pressure",
+   "link": "https://economictimes.indiatimes.com/markets/us-stocks/news/nvidia-stock-sell-off-deepens-spy-scandal-price-target-cuts-put-ai-giant-under-pressure/slideshow/135728557.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T06:40:00.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Avanti Feeds shares stumble 6% as Q2 profit more than halves to ₹69 crore",
+   "link": "https://www.business-standard.com/markets/news/avanti-feeds-share-price-stumble-6-as-q2-profit-more-than-halves-to-69-crore-126111100454_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T06:36:36.000Z",
+   "category": "results"
+  },
+  {
+   "title": "MRF shares gain after Q2 results; Centrum bullish, sees margin recovery",
+   "link": "https://www.business-standard.com/markets/news/mrf-shares-gain-after-q2-results-centrum-bullish-sees-margin-recovery-126111100453_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T06:27:59.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Berger Paints hopes for gloss back on volume and margin after pale Q2",
+   "link": "https://www.livemint.com/market/mark-to-market/berger-paints-q2-results-margin-pressure-volume-growth-outlook-11794371076493.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T06:27:01.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Bank Nifty tops 61,000, nears all-time high; what do charts say?",
+   "link": "https://www.business-standard.com/markets/news/bank-nifty-tops-61-000-nears-all-time-high-what-do-charts-say-126111100417_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T06:14:03.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Mint Explainer | US AI sell-off: Are Indian AI-linked stocks next?",
+   "link": "https://www.livemint.com/market/stock-market-news/india-ai-stocks-selloff-us-tech-stocks-ai-sell-off-11794370178196.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T06:13:40.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Why KPI Green Energy, Waaree Energies shares are rising today; over 5% jump amid post Diwali Sensex, Nifty fireworks",
+   "link": "https://www.livemint.com/market/stock-market-news/why-kpi-green-energy-waaree-energies-shares-are-rising-today-over-5-jump-amid-post-diwali-sensex-nifty-fireworks-11794375321435.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T06:11:58.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "AI stock Nvidia crashed but Netweb Technologies shares jumped 8% today after falling 13% in 1 month? Reasons; target",
+   "link": "https://www.livemint.com/market/stock-market-news/ai-stock-nvidia-crashed-but-netweb-technologies-shares-jumped-8-today-after-falling-13-in-1-month-reasons-target-11794375606908.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T06:00:32.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Money Market Operations as on November 10, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63954",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-11T06:00:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Railway stocks RVNL, RailTel gain up to 7%; experts see valuation comfort",
+   "link": "https://www.business-standard.com/markets/news/railway-stocks-rvnl-railtel-irfc-gain-up-to-7-experts-see-valuation-comfort-126111100379_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T05:53:58.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "At new highs! Eternal, Groww, Adani Ports, Ather, 16 more NSE 500 stocks",
+   "link": "https://www.business-standard.com/markets/news/at-new-highs-eternal-groww-adani-ports-ather-16-more-nse-500-stocks-126111100312_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T05:42:47.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "India bonds slip as Treasury rout offsets oil slide",
+   "link": "https://economictimes.indiatimes.com/markets/bonds/india-bonds-slip-as-treasury-rout-offsets-oil-slide/articleshow/135727127.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T05:39:10.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "IndiGo shares: InterGlobe Aviation stock flying 5% high, among top Nifty 50 gainers | Buy? Target price, upside",
+   "link": "https://www.livemint.com/market/stock-market-news/indigo-shares-interglobe-aviation-stock-flying-5-high-among-top-nifty-50-gainers-buy-target-price-upside-11794372567454.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T05:28:29.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Rupee rises 7 paise to 93.70 against US dollar in early trade",
+   "link": "https://economictimes.indiatimes.com/markets/forex/forex-news/rupee-rises-7-paise-to-93-70-against-us-dollar-in-early-trade/articleshow/135726644.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T05:16:44.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "Balmer Lawrie share price jumps 16% as stock rallies after strong Q2 results, gains 19% in two weeks | Check key levels",
+   "link": "https://www.livemint.com/market/stock-market-news/balmer-lawrie-share-price-jumps-16-as-stock-rallies-after-strong-q2-results-gains-19-in-two-weeks-check-key-levels-11794372566602.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T05:13:46.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Ashoka Buildcon shares jump 15% on ₹866 crore NHAI expressway contract",
+   "link": "https://www.business-standard.com/markets/news/ashoka-buildcon-shares-jump-15-on-866-crore-nhai-expressway-contract-126111100281_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T05:03:07.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Ashoka Buildcon shares soar 14% after new NHAI order win, still down 43% in 1 year - check contract details, performance",
+   "link": "https://www.livemint.com/market/stock-market-news/ashoka-buildcon-shares-soar-14-after-new-nhai-order-win-still-down-43-in-1-year-check-contract-details-performance-11794372853320.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T05:02:59.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Kalyan Jewellers surges 10%, hits 52-week high post Q2 results",
+   "link": "https://www.business-standard.com/markets/news/kalyan-jewellers-surges-10-hits-52-week-high-post-q2-results-126111100244_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T04:41:56.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Cochin Shipyard tanks 8% post Q2 show; what's plaguing the defence stock?",
+   "link": "https://www.business-standard.com/markets/news/cochin-shipyard-share-price-tanks-8-post-q2-show-what-s-plaguing-the-defence-stock-126111100253_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T04:40:29.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Cochin Shipyard shares crash 8%: Defence PSU stock Q2 profit drops 50% but declares ₹3 dividend- Still a stock to buy?",
+   "link": "https://www.livemint.com/market/stock-market-news/cochin-shipyard-shares-crash-8-defence-psu-stock-q2-profit-drops-50-but-declares-rs-3-dividend-still-a-stock-to-buy-11794370626964.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T04:38:24.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Positive Breakout: These 5 stocks rose above their 200 DMAs",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/news/positive-breakout-these-5-stocks-rose-above-their-200-dmas/slideshow/135725922.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T04:34:09.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "UltraTech Cem Share Price Highlights: UltraTech Cem. Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ultratech-cem-share-price-live-11-nov-2026/liveblog/135725755.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T04:32:04.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Bulls in action! Sensex zooms 1,400 pts intraday; oil, FII buying aid rally",
+   "link": "https://www.business-standard.com/markets/news/bulls-in-action-sensex-zooms-1-300-pts-intraday-oil-fii-buying-aid-rally-126111100243_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T04:27:01.000Z",
+   "category": "flows"
+  },
+  {
+   "title": "Why Kalyan Jewellers shares surged 10%, hit 52-week high after Diwali, Dhanteras; up 26% in a week | Buy, sell or hold?",
+   "link": "https://www.livemint.com/market/stock-market-news/why-kalyan-jewellers-shares-surged-10-hit-52-week-high-after-diwali-dhanteras-up-26-in-a-week-buy-sell-or-hold-11794369395918.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T04:16:51.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Dr Reddys Share Price Highlights: Dr. Reddys Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/dr-reddys-share-price-live-11-nov-2026/liveblog/135725513.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T04:16:16.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "TD Power shares up 350% up in 3 years, jumps 5% today as Sensex, Nifty jump massively | More upside? target, stop loss",
+   "link": "https://www.livemint.com/market/stock-market-news/td-power-shares-up-350-up-in-3-years-jumps-5-today-as-sensex-nifty-jump-massively-more-upside-target-stop-loss-11794369346196.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T04:15:19.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "IIFL Finance-Blackstone deal: Stock gains 4%; brokerages decode impact",
+   "link": "https://www.business-standard.com/markets/news/iifl-finance-blackstone-deal-stock-gains-4-brokerages-decode-impact-126111100226_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T04:08:27.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "FPIs pump ₹56,771 cr into equities in 8 days; biggest inflow since Dec 2020",
+   "link": "https://www.business-standard.com/markets/news/fpis-pump-56-771-cr-into-equities-in-8-days-biggest-inflow-since-dec-2020-126111100201_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T04:03:52.000Z",
+   "category": "flows"
+  },
+  {
+   "title": "Stock Market Today: Massive jump in Sensex, Nifty! ₹4.5 lakh cr wealth added in a few mins - Reasons for bullish party",
+   "link": "https://www.livemint.com/market/stock-market-news/stock-market-today-massive-jump-in-sensex-nifty-rs-4-5-lakh-cr-wealth-added-in-a-few-mins-reasons-for-bullish-party-11794369074218.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T04:03:17.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Punjab National Bank among 7 stocks showing White Marubozu pattern",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/news/punjab-national-bank-among-7-stocks-showing-white-marubozu-pattern/slideshow/135725226.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:53:27.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Jefferies bets on largecaps as FPIs return; RIL, HDFC among top plays",
+   "link": "https://www.business-standard.com/markets/news/jefferies-bets-on-largecaps-as-fpis-return-ril-hdfc-among-top-plays-126111100198_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T03:48:59.000Z",
+   "category": "other"
+  },
+  {
+   "title": "Union Bank of India among 5 stocks closing above VWAP",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/news/union-bank-of-india-among-5-stocks-closing-above-vwap/slideshow/135725070.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:43:28.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Bharat Dynamics among 5 stocks showing RSI trending up",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/news/bharat-dynamics-among-5-stocks-showing-rsi-trending-up/slideshow/135724716.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:31:18.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Money Market Operations as on November 09, 2026",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63953",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-11T03:30:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "HCL Tech Share Price Highlights: HCL Tech Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hcl-tech-share-price-live-updates-11-nov-2026/liveblog/135724550.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:25:13.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Oil rises from 2-month low as Hormuz shipping attacks offset truce hopes",
+   "link": "https://www.business-standard.com/markets/commodities/oil-rises-from-2-month-low-as-hormuz-shipping-attacks-offset-truce-hopes-126111100088_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T03:22:24.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "Tata Steel Share Price Highlights: Tata Steel Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tata-steel-stock-price-live-updates-11-nov-2026/liveblog/135724245.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:12:23.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Adani Ent Share Price Highlights: Adani Ent. Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/adani-ent-share-price-today-live-updates-11-nov-2026/liveblog/135724238.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:12:05.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Coal India Share Price Highlights: Coal India Ltd Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/coal-india-ltd-share-price-today-live-11-nov-2026/liveblog/135724213.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:10:51.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "SBI Life Share Price Highlights: SBI Life Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-life-stock-price-today-live-11-nov-2026/liveblog/135724210.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:10:40.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Sensex, Nifty hit eight-month high as foreign investors return",
+   "link": "https://www.livemint.com/market/stock-market-news/indian-stocks-poised-for-higher-open-on-softer-crude-robust-foreign-buying-11794366485802.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T03:10:35.000Z",
+   "category": "flows"
+  },
+  {
+   "title": "HDFC Life Share Price Highlights: HDFC Life Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hdfc-life-share-price-today-live-11-nov-2026/liveblog/135724204.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:10:31.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Kotak Bank Share Price Highlights: Kotak Bank Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/kotak-bank-share-price-today-live-updates-11-nov-2026/liveblog/135724188.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:10:06.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Tata Consumer Share Price Highlights: Tata Consumer Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/tata-consumer-stock-price-live-updates-11-nov-2026/liveblog/135724184.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:10:05.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "ONGC dividend 2026: Last day to buy today | Check dividend payout, record date, history, yield and returns",
+   "link": "https://www.livemint.com/market/stock-market-news/ongc-dividend-2026-last-day-to-buy-today-check-dividend-payout-record-date-history-yield-and-returns-11794363759514.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T03:07:01.000Z",
+   "category": "results"
+  },
+  {
+   "title": "Power Grid Share Price Highlights: Power Grid Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/power-grid-share-price-live-updates-11-nov-2026/liveblog/135723960.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:01:59.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "RIL Share Price Highlights: RIL Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ril-share-price-live-11-nov-2026/liveblog/135723929.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:00:55.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Wipro Share Price Highlights: Wipro Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/wipro-stock-price-live-updates-11-nov-2026/liveblog/135723900.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:00:14.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "HUL Share Price Highlights: HUL Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hul-share-price-today-live-updates-11-nov-2026/liveblog/135723890.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T03:00:08.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Axis Bank Share Price Highlights: Axis Bank Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/axis-bank-stock-price-live-updates-11-nov-2026/liveblog/135723764.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:55:30.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Infosys Share Price Highlights: Infosys Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/infosys-stock-price-livestock-price-today-live-updates-11-nov-2026/liveblog/135723760.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:55:25.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "ICICI Bank Share Price Highlights: ICICI Bank Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/icici-bank-share-price-today-live-11-nov-2026/liveblog/135723758.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:55:23.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "LTIMindtree Share Price Highlights: LTIMindtree Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ltimindtree-stock-price-live-updates-11-nov-2026/liveblog/135723744.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:55:06.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Nestle India Share Price Highlights: Nestle India Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/nestle-india-share-price-live-updates-11-nov-2026/liveblog/135723743.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:55:06.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Hero MotoCorp Share Price Highlights: Hero MotoCorp Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hero-motocorp-share-price-live-11-nov-2026/liveblog/135723568.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:50:05.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "M&M Share Price Highlights: M&M Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/mm-share-price-today-live-11-nov-2026/liveblog/135723505.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:47:18.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Jio Financial Services Share Price Highlights: Jio Financial Services Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/jio-financial-services-stock-price-live-updates-11-nov-2026/liveblog/135723494.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:46:53.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Asian Paints Share Price Highlights: Asian Paints Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/asian-paints-share-price-today-live-11-nov-2026/liveblog/135723493.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:46:48.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Bajaj Finserv Share Price Highlights: Bajaj Finserv Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bajaj-finserv-share-price-live-11-nov-2026/liveblog/135723489.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:46:36.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Bharti Airtel Share Price Highlights: Bharti Airtel Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bharti-airtel-share-price-today-live-11-nov-2026/liveblog/135723485.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:46:31.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "BPCL Share Price Highlights: BPCL Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/bpcl-share-price-live-updates-11-nov-2026/liveblog/135723479.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:45:43.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "L&T Share Price Highlights: L&T Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/lt-share-price-live-11-nov-2026/liveblog/135723475.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:45:24.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Hindalco Share Price Highlights: Hindalco Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/hindalco-share-price-today-live-11-nov-2026/liveblog/135723468.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:45:07.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "NTPC Share Price Highlights: NTPC Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/ntpc-share-price-live-updates-11-nov-2026/liveblog/135723467.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:45:06.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "UPL Share Price Highlights: UPL Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/upl-share-price-live-11-nov-2026/liveblog/135723402.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:40:24.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "SBI Share Price Highlights: SBI Stock Price History",
+   "link": "https://economictimes.indiatimes.com/markets/stocks/stock-liveblog/sbi-share-price-live-updates-11-nov-2026/liveblog/135723391.cms",
+   "source": "The Economic Times",
+   "kind": "media",
+   "published": "2026-11-11T02:40:06.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "What next for Nifty after a gap-up open on Wed? Analysts decode strategy",
+   "link": "https://www.business-standard.com/markets/news/stock-market-outlook-what-next-for-nifty-after-a-gap-up-open-on-wednesday-analysts-decode-strategy-126111100093_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T02:39:50.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Stocks to watch: Kalyan Jewellers, MTNL, Dabur, IIFL Finance, MRF, NBCC",
+   "link": "https://www.business-standard.com/markets/news/stocks-to-watch-kalyan-jewellers-mtnl-dabur-iifl-finance-mrf-nbcc-126111100092_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T02:36:38.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Stock Market Close: Sensex pares gains but ends 773 pts up, Nifty at 25,255; PSU Bank rises 3%",
+   "link": "https://www.business-standard.com/markets/news/stock-market-live-november-11-nse-bse-sensex-today-nifty50-gift-nifty-crude-oil-prices-126111100079_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T02:29:38.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Festive demand, export recovery drive auto sector growth, says MOFSL",
+   "link": "https://www.business-standard.com/markets/news/festive-demand-export-recovery-drive-auto-sector-growth-says-mofsl-126111100087_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T02:22:17.000Z",
+   "category": "economy"
+  },
+  {
+   "title": "Trump says Iran war ‘effectively over’: How's it likely to impact Sensex, Nifty, gold and silver prices? Experts' views",
+   "link": "https://www.livemint.com/market/stock-market-news/trump-says-iran-war-effectively-over-hows-it-likely-to-impact-sensex-nifty-gold-and-silver-prices-experts-views-11794362432588.html",
+   "source": "Mint",
+   "kind": "media",
+   "published": "2026-11-11T02:21:52.000Z",
+   "category": "global"
+  },
+  {
+   "title": "Hindalco, Airtel among 2 stock recommendations by Kotak's Shrikant Chouhan",
+   "link": "https://www.business-standard.com/markets/news/stocks-to-buy-today-hindalco-airtel-among-2-stock-recommendations-by-kotak-s-shrikant-chouhan-126111100077_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T02:10:48.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "PB Fintech: Retailers buy, FPIs turn wary in Q2; who got right end of deal?",
+   "link": "https://www.business-standard.com/markets/news/pb-fintech-retailers-buy-fpis-turn-wary-in-q2-who-got-right-end-of-deal-126111100075_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-11T01:44:22.000Z",
+   "category": "results"
+  },
+  {
+   "title": "The turn of the tide: Foreign investors return, signalling longer India bet",
+   "link": "https://www.business-standard.com/markets/news/the-turn-of-the-tide-foreign-investors-return-signalling-longer-india-bet-126111000761_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T17:29:29.000Z",
+   "category": "flows"
+  },
+  {
+   "title": "Wall St slips as hot inflation data fuels rate-hike jitters; Nvidia down 4%",
+   "link": "https://www.business-standard.com/markets/news/wall-st-slips-as-hot-inflation-data-fuels-rate-hike-jitters-nvidia-down-4-126111001020_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T16:52:36.000Z",
+   "category": "economy"
+  },
+  {
+   "title": "FPIs turn net buyers in November, pump ₹53,739 crore into Indian equities",
+   "link": "https://www.business-standard.com/markets/news/fpis-turn-net-buyers-in-november-pump-53-739-crore-into-indian-equities-126111000477_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T11:17:00.000Z",
+   "category": "other"
+  },
+  {
+   "title": "World stocks rise as oil slips below $90 on hopes of US-Iran peace talks",
+   "link": "https://www.business-standard.com/markets/news/world-stocks-rise-as-oil-slips-below-90-on-hopes-of-us-iran-peace-talks-126111000408_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T10:08:00.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "Bullish signals! GIFT Nifty jumps 1% as crude oil prices test $90/bbl",
+   "link": "https://www.business-standard.com/markets/news/bullish-signals-gift-nifty-jumps-1-as-crude-oil-prices-test-90-bbl-126111000417_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T09:43:40.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "Oil prices fall as Trump signals pause in military action against Iran",
+   "link": "https://www.business-standard.com/markets/commodities/oil-prices-fall-as-trump-signals-pause-in-military-action-against-iran-126111000067_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T09:37:58.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "Asian stocks rise amid falling oil prices on hopes of US-Iran talks",
+   "link": "https://www.business-standard.com/markets/news/asian-stocks-rise-amid-falling-oil-prices-on-hopes-of-us-iran-talks-126111000080_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T03:41:31.000Z",
+   "category": "commodities"
+  },
+  {
+   "title": "Stock market holiday: NSE, BSE to remain closed for Diwali-Balipratipada",
+   "link": "https://www.business-standard.com/markets/news/stock-market-holiday-today-nse-bse-to-remain-closed-for-diwali-balipratipada-126111000071_1.html",
+   "source": "Business Standard",
+   "kind": "media",
+   "published": "2026-11-10T02:17:22.000Z",
+   "category": "markets"
+  },
+  {
+   "title": "Auction of Government of India Dated Security",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63952",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-09T13:25:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Supersession of Board of Directors of Abhyudaya Co-operative Bank Ltd., Mumbai - Extension of period",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63951",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-09T13:20:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "State Government Securities - Full Auction Result",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63950",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-09T10:55:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Reserve Bank cancels Certificate of Registration of Gandhinagar Leasing and Finance Ltd.",
+   "link": "https://www.rbi.org.in/scripts/BS_PressReleaseDisplay.aspx?prid=63949",
+   "source": "RBI",
+   "kind": "official",
+   "published": "2026-11-09T10:40:00.000Z",
+   "category": "rbi"
+  },
+  {
+   "title": "Reporting requirement under Foreign Account Tax Compliance Act (FATCA) and Common Reporting Standard (CRS) revised through Income-Tax Act, 2025 read with Income-Tax Rules, 2026",
+   "link": "https://www.sebi.gov.in/legal/circulars/nov-2026/reporting-requirement-under-foreign-account-tax-compliance-act-fatca-and-common-reporting-standard-crs-revised-through-income-tax-act-2025-read-with-income-tax-rules-2026_105705.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of attachment dated November 10, 2026 issued against R Ravichandran under RC No.6735 of 2023 in the matter of Teledata Technology Solutions Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-r-ravichandran-under-rc-no-6735-of-2023-in-the-matter-of-teledata-technology-solutions-limited_105700.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of attachment dated November 10, 2026 issued against Secunderabad Healthcare Limited under RC No.7734 of 2024 in the matter of Secunderabad Healthcare Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-secunderabad-healthcare-limited-under-rc-no-7734-of-2024-in-the-matter-of-secunderabad-healthcare-limited_105698.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of attachment dated November 10, 2026 issued against Chennai Commodities under RC No.7470 of 2023 in the matter of First Futures and Stocks Private Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-chennai-commodities-under-rc-no-7470-of-2023-in-the-matter-of-first-futures-and-stocks-private-limited_105696.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of attachment dated November 10, 2026 issued against First Futures and Stocks Private Limited under RC No.7469 of 2023 in the matter of First Futures and Stocks Private Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-attachment-dated-november-10-2026-issued-against-first-futures-and-stocks-private-limited-under-rc-no-7469-of-2023-in-the-matter-of-first-futures-and-stocks-private-limited_105694.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Prohibitory Order No. 1583 of 2026 issued against CAT Technologies Limited associated with RC 4398 of 2021 in the matter of CAT Technologies Ltd.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/prohibitory-order-no-1583-of-2026-issued-against-cat-technologies-limited-associated-with-rc-4398-of-2021-in-the-matter-of-cat-technologies-ltd-_105693.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Prohibitory Order No. 1582 of 2026 issued against Dinesh Kumar Jaiswal associated with RC 4395 of 2021 in the matter of CAT Technologies Ltd.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/prohibitory-order-no-1582-of-2026-issued-against-dinesh-kumar-jaiswal-associated-with-rc-4395-of-2021-in-the-matter-of-cat-technologies-ltd-_105691.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Prohibitory Order No. 1581 of 2026 issued against Dhiraj Kumar Jaiswal associated with RC 4391 of 2021 in the matter of CAT Technologies Ltd.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/prohibitory-order-no-1581-of-2026-issued-against-dhiraj-kumar-jaiswal-associated-with-rc-4391-of-2021-in-the-matter-of-cat-technologies-ltd-_105689.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Cancellation of Recovery Certificate No. 9227 of 2026 dated 20.07.2026 issued against Lataben Narotambhai Rangi (PAN: AYRPR7467F) in the matter of trading activity in the scrip of ANI Integrated Services Limited.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/cancellation-of-recovery-certificate-no-9227-of-2026-dated-20-07-2026-issued-against-lataben-narotambhai-rangi-pan-ayrpr7467f-in-the-matter-of-trading-activity-in-the-scrip-of-ani-integrated-servi-_105685.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Cancellation of Recovery Certificate No. 9226 of 2026 dated 20.07.2026 issued against Jigar Bhailalbhai Khalash in the matter of Trading in the scrip of ANI Integrated Services Limited.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/cancellation-of-recovery-certificate-no-9226-of-2026-dated-20-07-2026-issued-against-jigar-bhailalbhai-khalash-in-the-matter-of-trading-in-the-scrip-of-ani-integrated-services-limited-_105683.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Commencement of SEBI (Settlement of Administrative and Civil Proceedings) Regulations, 2026",
+   "link": "https://www.sebi.gov.in/media-and-notifications/press-releases/nov-2026/commencement-of-sebi-settlement-of-administrative-and-civil-proceedings-regulations-2026_105680.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "SEBI order for compliance - Release Order dated November 06, 2026 issued under RC No. 9267 of 2026 drawn against S S TRADERS (Prop. Mr. Marvadi Parsotambhai) in the matter of Trading activity in the scrip of ANI Integrated Services Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/sebi-order-for-compliance-release-order-dated-november-06-2026-issued-under-rc-no-9267-of-2026-drawn-against-s-s-traders-prop-mr-marvadi-parsotambhai-in-the-matter-of-trading-activity-in-the-s-_105679.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "SEBI order for compliance - Release Order dated November 06, 2026 issued under RC No. 9229 of 2026 drawn against Rakeshbhai K Pandya in the matter of Trading activity in the scrip of ANI Integrated Services Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/sebi-order-for-compliance-release-order-dated-november-06-2026-issued-under-rc-no-9229-of-2026-drawn-against-rakeshbhai-k-pandya-in-the-matter-of-trading-activity-in-the-scrip-of-ani-integrated-se-_105677.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "SEBI order for compliance - Release Order dated November 06, 2026 issued under RC No. 9230 of 2026 drawn against Sonalben Amitbhai Khalas in the matter of Trading activity in the scrip of ANI Integrated Services Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/sebi-order-for-compliance-release-order-dated-november-06-2026-issued-under-rc-no-9230-of-2026-drawn-against-sonalben-amitbhai-khalas-in-the-matter-of-trading-activity-in-the-scrip-of-ani-integrat-_105675.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Cancellation of Recovery Certificate No. 9267of 2026 dated 29.07.2026 issued against S S TRADERS (Prop. Mr. Marvadi Parsotambhai) in the matter of Trading activity in the scrip of ANI Integrated Services Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/cancellation-of-recovery-certificate-no-9267of-2026-dated-29-07-2026-issued-against-s-s-traders-prop-mr-marvadi-parsotambhai-in-the-matter-of-trading-activity-in-the-scrip-of-ani-integrated-servi-_105673.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Cancellation of Recovery Certificate No. 9230 of 2026 dated 29.07.2026 issued against Sonalben Amitbhai Khalas in the matter of Trading activity in the scrip of ANI Integrated Services Limited.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/cancellation-of-recovery-certificate-no-9230-of-2026-dated-29-07-2026-issued-against-sonalben-amitbhai-khalas-in-the-matter-of-trading-activity-in-the-scrip-of-ani-integrated-services-limited-_105671.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Cancellation of Recovery Certificate No. 9229 of 2026 dated 29.07.2026 issued against Rakeshbhai K Pandya in the matter of Trading activity in the scrip of ANI Integrated Services Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/cancellation-of-recovery-certificate-no-9229-of-2026-dated-29-07-2026-issued-against-rakeshbhai-k-pandya-in-the-matter-of-trading-activity-in-the-scrip-of-ani-integrated-services-limited_105669.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "SEBI Order for Compliance - Release Order for Recovery Certificate No. 9227 of 2026 against Lataben Narotambhai Rangi (PAN: AYRPR7467F) in the matter of trading activity in the scrip of ANI Integrated Services Limited.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/sebi-order-for-compliance-release-order-for-recovery-certificate-no-9227-of-2026-against-lataben-narotambhai-rangi-pan-ayrpr7467f-in-the-matter-of-trading-activity-in-the-scrip-of-ani-integrated-_105668.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Adjudication Order in the matter of trading activities of certain client of Inventure growth and Securities Limited suspected to be Front Running to the trades of Axis Mutual Fund",
+   "link": "https://www.sebi.gov.in/enforcement/orders/nov-2026/adjudication-order-in-the-matter-of-trading-activities-of-certain-client-of-inventure-growth-and-securities-limited-suspected-to-be-front-running-to-the-trades-of-axis-mutual-fund_105664.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Appeal No. 7145 of 2026 filed by Vikram Aggarwal",
+   "link": "https://www.sebi.gov.in/enforcement/orders/nov-2026/appeal-no-7145-of-2026-filed-by-vikram-aggarwal_105663.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Appeal No. 7144 of 2026 filed by Dhanni Devi Panwar",
+   "link": "https://www.sebi.gov.in/enforcement/orders/nov-2026/appeal-no-7144-of-2026-filed-by-dhanni-devi-panwar_105662.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Appeal No. 7143 of 2026 filed by Ashok kumar Saini",
+   "link": "https://www.sebi.gov.in/enforcement/orders/nov-2026/appeal-no-7143-of-2026-filed-by-ashok-kumar-saini_105661.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Appeal No. 7141 of 2026 filed by Yogesh Hagavane",
+   "link": "https://www.sebi.gov.in/enforcement/orders/nov-2026/appeal-no-7141-of-2026-filed-by-yogesh-hagavane_105660.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Prohibitory Order No.1580/2026 issued against K S Chakravarthi in the matter of Ranklin Solutions Ltd. under Recovery Certificate No. 2826 of 2020 and 2827 of 2020",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/prohibitory-order-no-1580-2026-issued-against-k-s-chakravarthi-in-the-matter-of-ranklin-solutions-ltd-under-recovery-certificate-no-2826-of-2020-and-2827-of-2020_105659.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of Demand dated November 06, 2026, against First Overseas Capital Limited (AAACL4737A) in the matter of Veerkrupa Jewellers Limited under RC No. 9322 of 2026",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-first-overseas-capital-limited-aaacl4737a-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9322-of-2026_105658.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of Demand dated November 06, 2026, against Natasha Sinha (AAUPS3146B) in the matter of Mideast Integrated Steel Limited (MISL) under RC No. 9321 of 2026",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-natasha-sinha-aaups3146b-in-the-matter-of-mideast-integrated-steel-limited-misl-under-rc-no-9321-of-2026_105656.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of Demand dated November 06, 2026 against Satyen Bhupendra Dalal (PAN: AACPD0426F) in the matter of Veerkrupa Jewellers Limited under RC No. 9320 of 2026",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-against-satyen-bhupendra-dalal-pan-aacpd0426f-in-the-matter-of-veerkrupa-jewellers-limited-under-rc-no-9320-of-2026_105654.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Notice of Demand dated November 06, 2026 issued under RC No. 9319 of 2026 drawn against Investowryght Research Analytics Private Limited in the matter of Investowryght Research Analytics Private Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/notice-of-demand-dated-november-06-2026-issued-under-rc-no-9319-of-2026-drawn-against-investowryght-research-analytics-private-limited-in-the-matter-of-investowryght-research-analytics-private-limit-_105652.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Release Order for Recovery Certificate No. 7694 of 2026 against Sathish Kumar N (PAN – DUWPS2496M) in the matter of Arvind Remedies Limited",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/release-order-for-recovery-certificate-no-7694-of-2026-against-sathish-kumar-n-pan-duwps2496m-in-the-matter-of-arvind-remedies-limited_105650.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  },
+  {
+   "title": "Completion of Recovery Certificate No. 7694 of 2024 dated November 06, 2026 issued to Sathish Kumar N in the matter of Arvind Remedies Ltd.",
+   "link": "https://www.sebi.gov.in/enforcement/recovery-proceedings/nov-2026/completion-of-recovery-certificate-no-7694-of-2024-dated-november-06-2026-issued-to-sathish-kumar-n-in-the-matter-of-arvind-remedies-ltd-_105648.html",
+   "source": "SEBI",
+   "kind": "official",
+   "published": null,
+   "category": "regulation"
+  }
+ ]
+}

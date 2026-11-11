@@ -1,5 +1,8 @@
 import { lazy, Suspense, useEffect, useState, type ReactElement } from 'react'
 import { ChartsHub, CandleAcademy, PatternPage, PatternQuizPage } from './pages/Candles'
+import { MarketPage, StockSearchPage, StockPage, WatchlistsPage } from './pages/Market'
+import { FundamentalsPage, ComparePage, WorksheetPage, CompareSheetsPage } from './pages/Fundamentals'
+import { NewsPage } from './pages/News'
 
 // Chart pages load the chart library on demand, keeping the first load fast.
 const InterpreterPage = lazy(() => import('./pages/Interpreter'))
@@ -47,13 +50,13 @@ const tabs = [
   { key: 'home', label: 'Home', href: '/', d: 'M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6h-6v6H4a1 1 0 01-1-1z' },
   { key: 'learn', label: 'Learn', href: '/learn', d: 'M4 5a2 2 0 012-2h13v16H6a2 2 0 00-2 2zM4 5v16M8 7h7' },
   { key: 'charts', label: 'Charts', href: '/charts', d: 'M7 4v16M7 8h-2v8h2M17 3v18M17 7h-2v6h2M12 6v12M12 10h-2v4h2' },
-  { key: 'glossary', label: 'Glossary', href: '/glossary', d: 'M11 4a7 7 0 105.3 11.6L21 20M11 8v6M8 11h6' },
+  { key: 'market', label: 'Market', href: '/market', d: 'M3 17l6-6 4 4 8-8M15 7h6v6' },
   { key: 'more', label: 'More', href: '/more', d: 'M4 6h16M4 12h16M4 18h16' },
 ]
 
 function activeTab(path: string) {
   if (path.startsWith('/learn') || path.startsWith('/lesson')) return 'learn'
-  if (path.startsWith('/glossary')) return 'glossary'
+  if (['/market', '/stock', '/watchlists', '/news', '/fundamentals', '/compare', '/worksheet'].some((p) => path.startsWith(p))) return 'market'
   if (['/charts', '/candles', '/pattern', '/interpreter', '/technical'].some((p) => path.startsWith(p))) return 'charts'
   if (path === '/' || path === '') return 'home'
   return 'more'
@@ -77,6 +80,15 @@ export default function App() {
     case 'more': page = <MorePage />; break
     case 'settings': page = <SettingsPage />; break
     case 'soon': page = <SoonPage id={b} />; break
+    case 'market': page = <MarketPage />; break
+    case 'stocks': page = <StockSearchPage />; break
+    case 'stock': page = <StockPage key={b} sym={decodeURIComponent(b ?? '')} />; break
+    case 'watchlists': page = <WatchlistsPage />; break
+    case 'news': page = <NewsPage />; break
+    case 'fundamentals': page = <FundamentalsPage />; break
+    case 'compare': page = <ComparePage key={b} syms={decodeURIComponent(b ?? '')} />; break
+    case 'compare-sheets': page = <CompareSheetsPage />; break
+    case 'worksheet': page = b === 'new' ? <WorksheetPage key={`new-${c}`} id="" sym={decodeURIComponent(c ?? '')} /> : <WorksheetPage key={b} id={b ?? ''} />; break
     case 'charts': page = <ChartsHub />; break
     case 'candles': page = <CandleAcademy />; break
     case 'pattern': page = <PatternPage key={b} id={b} />; break

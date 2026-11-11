@@ -14,6 +14,11 @@ export function LearnPage() {
   return (
     <div>
       <Header title="Learn" subtitle="Your structured curriculum" />
+      <div className="mb-3 grid grid-cols-3 gap-2">
+        <Button variant="secondary" className="px-2 text-sm" onClick={() => go('/glossary')}>📖 Glossary</Button>
+        <Button variant="secondary" className="px-2 text-sm" onClick={() => go('/review')}>🔁 Revise</Button>
+        <Button variant="secondary" className="px-2 text-sm" onClick={() => go('/progress')}>🎯 Progress</Button>
+      </div>
       <div className="grid gap-3">
         {modules.map((m) => {
           const done = m.lessons.filter((l) => state.lessons[l.id]?.completedAt).length
