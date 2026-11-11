@@ -1,0 +1,291 @@
+import { Q } from './dsl'
+import type { Term } from './types'
+
+// All numerical examples use made-up, round numbers for learning — they are not real company data.
+export const terms: Term[] = [
+  {
+    id: 'eps', term: 'EPS', aka: ['Earnings per share'], category: 'Profitability',
+    simple: 'The profit a company earned for each of its shares.',
+    detail: 'EPS divides the profit that belongs to equity shareholders by the number of shares. Basic EPS uses the actual weighted-average share count; diluted EPS also counts shares that could be created from employee stock options or convertible securities. Companies report EPS every quarter, and “TTM EPS” adds up the trailing twelve months.',
+    formula: 'EPS = (Net profit − Preference dividends) ÷ Weighted average equity shares',
+    example: { rows: [['Net profit', '₹1,200 crore'], ['Shares', '60 crore'], ['EPS', '₹1,200 crore ÷ 60 crore = ₹20'], ['Next year: profit ₹1,500 crore, same shares', 'EPS = ₹25 (+25%)']] },
+    significance: 'EPS growth over many years is a core driver of long-term share price growth. It is the “E” in the P/E ratio.',
+    mistake: 'Higher EPS is not automatically better. EPS can rise from share buybacks or one-off gains (like selling land) without the business improving. And EPS cannot be compared between companies directly, because their share counts differ.',
+    questions: [
+      Q('g-eps-1', 'Net profit ₹300 crore, 15 crore shares. What is EPS?', ['₹20', '₹45', '₹2', '₹200'], '₹300 crore ÷ 15 crore = ₹20.'),
+      Q('g-eps-2', 'EPS jumped 40% this year, but only because the company sold a building. What should you conclude?',
+        ['The jump came from a one-off gain that may not repeat', 'The business is now 40% stronger', 'The share price will rise 40%', 'P/E no longer matters'], 'Separate recurring profit from one-off items.'),
+    ],
+  },
+  {
+    id: 'pe', term: 'P/E ratio', aka: ['Price to earnings', 'PE'], category: 'Valuation',
+    simple: 'How many rupees investors pay for ₹1 of a company’s yearly profit.',
+    detail: 'P/E divides the share price by EPS (usually trailing twelve months). A P/E of 25 means investors pay ₹25 for each ₹1 of current yearly earnings — they expect growth or stability. P/E varies by sector: fast-growing or very stable businesses often trade at high P/Es, while cyclical sectors such as metals usually trade at low ones. Forward P/E uses next year’s estimated EPS.',
+    formula: 'P/E = Share price ÷ EPS   (equivalently, Market cap ÷ Net profit)',
+    example: { rows: [['Share price', '₹600'], ['EPS (TTM)', '₹24'], ['P/E', '600 ÷ 24 = 25×'], ['Earnings yield', '1 ÷ 25 = 4%'], ['EPS grows to ₹30, P/E stays 25', 'Price = ₹750 (+25%)'], ['EPS grows to ₹30, P/E falls to 18', 'Price = ₹540 (−10%)']], note: 'A share price moves with both earnings growth and changes in the multiple investors are willing to pay.' },
+    significance: 'Compare a company’s P/E with its own history, with peers in the same sector, and with its growth rate.',
+    mistake: '“Low P/E means cheap, high P/E means expensive” is too simple. A low P/E can reflect falling earnings or serious problems (a value trap); a high P/E can be justified by strong long-term growth. P/E is meaningless when earnings are negative or temporarily inflated.',
+    questions: [
+      Q('g-pe-1', 'Price ₹450, EPS ₹15. What is the P/E?', ['30', '6,750', '0.03', '15'], '450 ÷ 15 = 30.'),
+      Q('g-pe-2', 'Why might a steel company trade at a much lower P/E than a consumer-goods company?',
+        ['Its earnings are cyclical and less predictable', 'Steel companies do not report profits', 'A low P/E always means the market is wrong', 'Consumer companies have no competition'], 'Investors pay less for earnings that swing with the economic cycle.'),
+    ],
+  },
+  {
+    id: 'pb', term: 'P/B ratio', aka: ['Price to book'], category: 'Valuation',
+    simple: 'The share price compared with the company’s accounting net worth per share.',
+    detail: 'P/B divides the share price by book value per share. It is most useful for businesses whose assets are mainly financial and valued close to market value — banks, NBFCs and insurers. For asset-light businesses such as IT services or consumer brands, book value understates their real worth, so P/B looks very high.',
+    formula: 'P/B = Share price ÷ Book value per share',
+    example: { rows: [['Bank’s net worth', '₹40,000 crore'], ['Shares', '200 crore'], ['Book value per share', '₹200'], ['Share price', '₹300'], ['P/B', '300 ÷ 200 = 1.5×']] },
+    significance: 'For banks, read P/B together with ROE: a bank earning an 18% ROE deserves a higher P/B than one earning 8%. A P/B below 1 means the market values the company below its accounting net worth, often because it doubts the quality of the assets.',
+    mistake: 'A P/B below 1 is not automatically a bargain. If a bank’s loans are going bad, its true book value may be much lower than the reported figure.',
+    questions: [
+      Q('g-pb-1', 'Book value per share ₹80, share price ₹120. What is P/B?', ['1.5', '0.67', '40', '200'], '120 ÷ 80 = 1.5.'),
+      Q('g-pb-2', 'For which business is P/B most meaningful?', ['A bank', 'A software services company', 'A consumer brand company', 'A consulting firm'], 'Banks’ assets are mostly loans and investments recorded close to their value.'),
+    ],
+  },
+  {
+    id: 'roe', term: 'ROE', aka: ['Return on equity'], category: 'Profitability',
+    simple: 'How much profit a company earns on its shareholders’ money.',
+    detail: 'ROE divides net profit by average shareholders’ equity. An ROE of 20% means ₹20 of profit for every ₹100 of equity each year. Sustained high ROE suggests a competitive advantage. ROE can be broken into profit margin × asset turnover × leverage (the DuPont breakdown), which shows whether it comes from a good business or from heavy borrowing.',
+    formula: 'ROE = Net profit ÷ Average shareholders’ equity × 100',
+    example: { rows: [['Net profit', '₹500 crore'], ['Equity at start of year', '₹2,300 crore'], ['Equity at end of year', '₹2,700 crore'], ['Average equity', '₹2,500 crore'], ['ROE', '500 ÷ 2,500 = 20%']] },
+    significance: 'Companies that can reinvest profits at a high ROE compound shareholder wealth. Look for consistency across years and compare with peers.',
+    mistake: 'High ROE is not always good. Heavy borrowing shrinks equity and inflates ROE, and so can large buybacks or past losses. Always check debt-to-equity alongside ROE.',
+    questions: [
+      Q('g-roe-1', 'Net profit ₹90 crore, average equity ₹600 crore. What is ROE?', ['15%', '6.7%', '66.7%', '90%'], '90 ÷ 600 = 0.15 = 15%.'),
+      Q('g-roe-2', 'Two companies both have a 25% ROE. A has no debt; B has a debt-to-equity ratio of 3. Whose ROE is higher quality?',
+        ['A, because it is not driven by borrowing', 'B, because debt raises returns safely', 'They are identical', 'They cannot be compared'], 'Leverage can manufacture a high ROE while adding risk.'),
+    ],
+  },
+  {
+    id: 'roce', term: 'ROCE', aka: ['Return on capital employed'], category: 'Profitability',
+    simple: 'Profit earned on all the long-term money a company uses — both equity and debt.',
+    detail: 'ROCE divides operating profit (EBIT) by capital employed, where capital employed = equity + long-term debt (or total assets − current liabilities). Because it includes debt, ROCE is better than ROE for comparing companies that borrow different amounts, especially capital-heavy businesses such as cement, steel, autos and telecom. ROCE should be higher than the company’s cost of capital; otherwise growth destroys value.',
+    formula: 'ROCE = EBIT ÷ (Equity + Long-term debt) × 100',
+    example: { rows: [['EBIT', '₹360 crore'], ['Equity', '₹1,500 crore'], ['Long-term debt', '₹900 crore'], ['Capital employed', '₹2,400 crore'], ['ROCE', '360 ÷ 2,400 = 15%'], ['Borrowing cost 10%', 'Projects earning 15% create value']] },
+    significance: 'Shows how efficiently management uses capital. A stable ROCE above about 15% in a capital-heavy industry is often seen as a sign of quality (a rule of thumb, not a law).',
+    mistake: 'Comparing ROCE across very different industries is misleading — asset-light businesses naturally show much higher ROCE. A large pile of idle cash also lowers ROCE even when the core business is excellent.',
+    questions: [
+      Q('g-roce-1', 'EBIT ₹200 crore, capital employed ₹1,000 crore. What is ROCE?', ['20%', '5%', '2%', '12%'], '200 ÷ 1,000 = 20%.'),
+      Q('g-roce-2', 'Why is ROCE useful for comparing companies with very different debt levels?',
+        ['It measures returns on both equity and debt capital', 'It ignores profits', 'It only counts cash', 'It is always higher than ROE'], 'Including debt in the denominator puts borrowers and non-borrowers on equal terms.'),
+    ],
+  },
+  {
+    id: 'ebitda', term: 'EBITDA', aka: ['Earnings before interest, taxes, depreciation and amortisation'], category: 'Profitability',
+    simple: 'Operating profit before interest, tax, depreciation and amortisation.',
+    detail: 'EBITDA is revenue minus operating expenses (raw materials, employee costs, other expenses), before deducting depreciation, amortisation, interest and tax. It shows the earning power of the core operations and helps compare companies with different debt levels or depreciation policies. EBITDA margin = EBITDA ÷ revenue.',
+    formula: 'EBITDA = Net profit + Tax + Interest + Depreciation & amortisation',
+    example: { rows: [['Revenue', '₹1,000 crore'], ['Operating expenses', '₹780 crore'], ['EBITDA', '₹220 crore (margin 22%)'], ['Depreciation', '₹50 crore'], ['Interest', '₹30 crore'], ['Profit before tax', '₹140 crore'], ['Tax at 25%', '₹35 crore'], ['Net profit', '₹105 crore']] },
+    significance: 'Used in EV/EBITDA valuation and in debt measures such as net debt ÷ EBITDA. Rising EBITDA margins point to improving operations.',
+    mistake: 'EBITDA is neither cash flow nor profit. It ignores the real cost of replacing machinery (capex), interest, tax and working-capital needs. Heavily indebted companies like to highlight EBITDA for exactly this reason.',
+    questions: [
+      Q('g-ebitda-1', 'Net profit ₹60 crore, tax ₹20 crore, interest ₹15 crore, depreciation ₹25 crore. What is EBITDA?', ['₹120 crore', '₹60 crore', '₹80 crore', '₹95 crore'], '60 + 20 + 15 + 25 = ₹120 crore.'),
+      Q('g-ebitda-2', 'Why is EBITDA not the same as cash a company can freely use?',
+        ['It ignores capex, interest, tax and working-capital needs', 'It already deducts all of those items', 'It is calculated only for banks', 'It is audited by SEBI'], 'Those real cash costs come after EBITDA.'),
+    ],
+  },
+  {
+    id: 'de', term: 'Debt-to-equity', aka: ['D/E', 'Leverage'], category: 'Balance sheet & cash',
+    simple: 'How much a company has borrowed compared with its shareholders’ money.',
+    detail: 'D/E divides total borrowings by shareholders’ equity. A D/E of 0.5 means ₹50 of debt for every ₹100 of equity. Debt magnifies returns in good times and losses in bad times, and interest must be paid even when profits fall. Useful companions: interest coverage (EBIT ÷ interest) and net debt (debt − cash).',
+    formula: 'Debt-to-equity = Total debt ÷ Shareholders’ equity',
+    example: { rows: [['Total borrowings', '₹1,800 crore'], ['Cash', '₹300 crore'], ['Equity', '₹2,000 crore'], ['D/E', '1,800 ÷ 2,000 = 0.9'], ['Net debt ÷ equity', '1,500 ÷ 2,000 = 0.75'], ['EBIT ₹400 crore, interest ₹160 crore', 'Interest coverage = 2.5×']] },
+    significance: 'Too much debt is one of the most common reasons companies collapse in downturns. Many investors prefer D/E below 1 for non-financial companies (a rule of thumb), with comfortable interest coverage.',
+    mistake: 'Banks and NBFCs naturally have very high D/E because borrowing and lending is their business — judge them on capital adequacy and loan quality instead. And some debt is fine when it funds high-return projects.',
+    questions: [
+      Q('g-de-1', 'Debt ₹500 crore, equity ₹1,000 crore. What is D/E?', ['0.5', '2', '1,500', '0.33'], '500 ÷ 1,000 = 0.5.'),
+      Q('g-de-2', 'Why is high debt dangerous in a downturn?',
+        ['Interest must still be paid when profits fall', 'Debt disappears when profits fall', 'Shareholders are paid before lenders', 'Debt automatically raises share prices'], 'Fixed obligations do not shrink when revenue shrinks.'),
+    ],
+  },
+  {
+    id: 'dividend-yield', term: 'Dividend yield', category: 'Valuation',
+    simple: 'A year’s dividends as a percentage of the share price.',
+    detail: 'Dividend yield shows the cash return you get from dividends alone at today’s price. The payout ratio (dividends ÷ net profit) shows how much of its profit the company distributes. In India, since April 2020, dividends are taxed in the investor’s hands at their income-tax slab rate.',
+    formula: 'Dividend yield = Annual dividend per share ÷ Share price × 100',
+    example: { rows: [['Share price', '₹400'], ['Dividends during the year', '₹6 + ₹10 = ₹16'], ['Dividend yield', '16 ÷ 400 = 4%'], ['EPS', '₹32'], ['Payout ratio', '16 ÷ 32 = 50%']] },
+    significance: 'Useful for income investors and for judging mature, cash-rich companies such as utilities and many public-sector firms. A steady, growing dividend backed by cash flow signals financial strength.',
+    mistake: 'A very high yield can be a warning: the price may have crashed because the market expects the dividend to be cut. Also, the share price usually drops by about the dividend amount on the ex-dividend date — a dividend is not free money.',
+    questions: [
+      Q('g-dy-1', 'Annual dividend ₹12, share price ₹240. What is the dividend yield?', ['5%', '20%', '2%', '12%'], '12 ÷ 240 = 5%.'),
+      Q('g-dy-2', 'A stock’s dividend yield rose to 12% because its price halved. What is a likely concern?',
+        ['The market expects future dividends to be cut', 'It is guaranteed income', 'The company is certainly undervalued', 'Dividend yields cannot change'], 'A sudden high yield often reflects doubts about the dividend.'),
+    ],
+  },
+  {
+    id: 'fcf', term: 'Free cash flow', aka: ['FCF'], category: 'Balance sheet & cash',
+    simple: 'Cash left from operations after paying for the investment the business needs.',
+    detail: 'FCF is operating cash flow minus capital expenditure. Reported profit includes non-cash items and accounting estimates; cash is much harder to manipulate. FCF can pay for dividends, buybacks, debt repayment or acquisitions. Consistently positive FCF is the mark of a self-funding business.',
+    formula: 'FCF = Cash flow from operating activities − Capital expenditure',
+    example: { rows: [['Net profit', '₹250 crore'], ['Cash from operations', '₹310 crore'], ['Capex', '₹120 crore'], ['Free cash flow', '₹190 crore'], ['FCF ÷ profit', '190 ÷ 250 = 76%']] },
+    significance: 'Compare FCF with net profit over several years. If profits rise but operating cash flow does not, unpaid customer bills or unsold stock may be piling up — a red flag. Discounted cash flow (DCF) valuations are built on FCF.',
+    mistake: 'Negative FCF is not always bad. A fast-growing company investing heavily in high-return capacity can have negative FCF for years. What matters is whether the investment earns good returns.',
+    questions: [
+      Q('g-fcf-1', 'Operating cash flow ₹80 crore, capex ₹30 crore. What is FCF?', ['₹50 crore', '₹110 crore', '₹30 crore', '₹2.67 crore'], '80 − 30 = ₹50 crore.'),
+      Q('g-fcf-2', 'Profits rise every year but operating cash flow stays flat. What could this signal?',
+        ['Rising receivables or inventory — the quality of earnings needs checking', 'The company is very healthy', 'Capex is zero', 'Nothing, because cash flow does not matter'], 'Profit that never turns into cash deserves scrutiny.'),
+    ],
+  },
+  {
+    id: 'ev', term: 'Enterprise value', aka: ['EV'], category: 'Valuation',
+    simple: 'The value of the whole business: equity plus debt, minus cash.',
+    detail: 'EV = market cap + total debt − cash. Think of it as the price an acquirer effectively pays: they buy all the shares and take on the debt, but they also get the cash. EV/EBITDA compares companies regardless of how they are financed.',
+    formula: 'EV = Market cap + Total debt (+ minority interest + preference capital) − Cash & equivalents',
+    example: { rows: [['Market cap', '₹10,000 crore'], ['Debt', '₹3,000 crore'], ['Cash', '₹1,000 crore'], ['EV', '₹12,000 crore'], ['EBITDA', '₹1,500 crore'], ['EV ÷ EBITDA', '8×']] },
+    significance: 'Two companies with the same market cap can have very different EVs. EV-based multiples are preferred for capital-intensive or heavily indebted companies.',
+    mistake: 'EV is not useful for banks and NBFCs, where debt is raw material rather than financing. And the “cash” must really be available — not trapped or needed for daily operations.',
+    questions: [
+      Q('g-ev-1', 'Market cap ₹5,000 crore, debt ₹2,000 crore, cash ₹500 crore. What is EV?', ['₹6,500 crore', '₹7,500 crore', '₹5,000 crore', '₹3,500 crore'], '5,000 + 2,000 − 500 = ₹6,500 crore.'),
+      Q('g-ev-2', 'Why might EV/EBITDA be better than P/E for comparing two steel companies?',
+        ['It accounts for differences in debt and cash', 'It ignores profits entirely', 'It uses only the share price', 'SEBI requires it'], 'EV puts companies with different financing on the same footing.'),
+    ],
+  },
+  {
+    id: 'peg', term: 'PEG ratio', aka: ['Price/earnings to growth'], category: 'Valuation',
+    simple: 'The P/E ratio adjusted for how fast earnings are growing.',
+    detail: 'PEG divides the P/E by the expected yearly EPS growth rate (in %). It was popularised by fund manager Peter Lynch. A PEG around 1 suggests the P/E is in line with growth; below 1 may mean the stock is cheap relative to its growth; well above 1, expensive relative to its growth.',
+    formula: 'PEG = P/E ÷ Expected EPS growth rate (%)',
+    example: { rows: [['Company A: P/E 40, growth 30%', 'PEG = 1.33'], ['Company B: P/E 20, growth 10%', 'PEG = 2.0'], ['Company C: P/E 15, growth 20%', 'PEG = 0.75']], note: 'B has the lowest-but-one P/E, yet the highest PEG.' },
+    significance: 'Helps compare growth stocks: a higher P/E can be reasonable when growth is much faster.',
+    mistake: 'PEG depends entirely on the growth estimate, which is often wrong or too optimistic. Very high short-term growth from a low base can make PEG look misleadingly low. It ignores debt, quality and how long growth will last.',
+    questions: [
+      Q('g-peg-1', 'P/E 30, expected EPS growth 15%. What is PEG?', ['2', '0.5', '45', '15'], '30 ÷ 15 = 2.'),
+      Q('g-peg-2', 'What is the PEG ratio’s biggest weakness?', ['It relies on growth forecasts that may be wrong', 'It cannot be calculated', 'It ignores P/E', 'It uses only past dividends'], 'Garbage in, garbage out: the growth input drives everything.'),
+    ],
+  },
+  {
+    id: 'book-value', term: 'Book value', aka: ['Net worth', 'Shareholders’ equity', 'BVPS'], category: 'Balance sheet & cash',
+    simple: 'A company’s net worth according to its balance sheet.',
+    detail: 'Book value = total assets − total liabilities. It equals share capital plus reserves and surplus (profits retained over the years). Book value per share (BVPS) = book value ÷ shares outstanding. It is an accounting number based largely on historical cost.',
+    formula: 'Book value = Total assets − Total liabilities;  BVPS = Book value ÷ Shares outstanding',
+    example: { rows: [['Total assets', '₹8,000 crore'], ['Total liabilities', '₹5,000 crore'], ['Book value', '₹3,000 crore'], ['Shares', '30 crore'], ['Book value per share', '₹100']] },
+    significance: 'Important for banks, financial companies and asset-heavy businesses. A book value that grows steadily shows that retained profits are building up.',
+    mistake: 'Book value is not what the assets would actually fetch. Land bought decades ago may be worth far more; obsolete machinery or bad loans may be worth far less. Brands, talent and customer relationships often do not appear at all.',
+    questions: [
+      Q('g-bv-1', 'Assets ₹600 crore, liabilities ₹450 crore, 10 crore shares. What is book value per share?', ['₹15', '₹105', '₹60', '₹45'], '(600 − 450) ÷ 10 = ₹15.'),
+      Q('g-bv-2', 'Why does a strong consumer-brand company often trade far above its book value?',
+        ['Its brand and other intangible strengths are not fully captured in book value', 'Its accounts are wrong', 'Book value includes the brand at market price', 'SEBI calculates book value'], 'Accounting rarely records internally built brands as assets.'),
+    ],
+  },
+  {
+    id: 'market-cap', term: 'Market capitalisation', aka: ['Market cap', 'Mcap'], category: 'Valuation',
+    simple: 'The total market value of all of a company’s shares.',
+    detail: 'Market cap = share price × shares outstanding. It changes whenever the price changes. SEBI classifies the top 100 companies by market cap as large caps, 101–250 as mid caps, and the rest as small caps. Free-float market cap counts only shares available for public trading, and is used for index weights.',
+    formula: 'Market cap = Share price × Shares outstanding',
+    example: { rows: [['Share price', '₹250'], ['Shares outstanding', '40 crore'], ['Market cap', '₹10,000 crore'], ['Price +20% to ₹300', 'Market cap ₹12,000 crore']] },
+    significance: 'Determines a company’s size category and index weight, and is the starting point for enterprise value and P/E (market cap ÷ profit).',
+    mistake: 'Market cap is not cash the company has, and not what it is “really worth” — it reflects current expectations, which can change quickly. A lower share price does not mean a smaller company.',
+    questions: [
+      Q('g-mc-1', 'Price ₹250, 40 crore shares. What is the market cap?', ['₹10,000 crore', '₹290 crore', '₹1,000 crore', '₹6.25 crore'], '250 × 40 crore = ₹10,000 crore.'),
+      Q('g-mc-2', 'One company’s share price is lower than another’s. Does that mean it is the smaller company?',
+        ['No — size depends on price × number of shares', 'Yes, always', 'Only on NSE', 'Only for banks'], 'Share count matters as much as price.'),
+    ],
+  },
+  {
+    id: 'net-margin', term: 'Net profit margin', aka: ['Net margin', 'PAT margin'], category: 'Profitability',
+    simple: 'The percentage of revenue left as profit after all expenses.',
+    detail: 'Net margin divides net profit by revenue. It includes every cost: raw materials, employees, depreciation, interest, tax and one-off items. Margins differ greatly by industry: software and branded consumer companies often earn high margins, while retail and trading businesses run on thin margins and high volumes.',
+    formula: 'Net margin = Net profit ÷ Revenue × 100',
+    example: { rows: [['Revenue', '₹2,000 crore'], ['Net profit', '₹160 crore'], ['Net margin', '8%'], ['Next year: revenue ₹2,200 crore, profit ₹198 crore', 'Margin 9% — profit grew 23.75% on 10% revenue growth']] },
+    significance: 'Expanding margins show pricing power or improving efficiency; a steady decline can signal rising competition or costs.',
+    mistake: 'Compare margins only within the same industry. One-off gains or losses can distort net margin in a single year — check operating margin too.',
+    questions: [
+      Q('g-nm-1', 'Revenue ₹500 crore, net profit ₹40 crore. What is the net margin?', ['8%', '12.5%', '4%', '40%'], '40 ÷ 500 = 8%.'),
+      Q('g-nm-2', 'A supermarket chain has a 3% net margin and a software firm 20%. Which statement is true?',
+        ['Margins differ by business model, so compare within an industry', 'The supermarket is badly run', 'The software firm will always do better', 'Net margin is the only metric that matters'], 'Thin-margin, high-volume models can be excellent businesses.'),
+    ],
+  },
+  {
+    id: 'operating-margin', term: 'Operating margin', aka: ['EBIT margin'], category: 'Profitability',
+    simple: 'Profit from the core business as a percentage of revenue.',
+    detail: 'Operating margin divides operating profit (EBIT — earnings before interest and tax, after depreciation) by revenue. Because it excludes financing costs and tax, it reflects how well the core business runs. Indian companies often highlight EBITDA margin in results; check both.',
+    formula: 'Operating margin = EBIT ÷ Revenue × 100',
+    example: { rows: [['Revenue', '₹1,000 crore'], ['EBITDA', '₹220 crore'], ['Depreciation', '₹50 crore'], ['EBIT', '₹170 crore'], ['Operating margin', '17%'], ['EBITDA margin', '22%']] },
+    significance: 'Tracks efficiency and pricing power over time. With high fixed costs (“operating leverage”), margins can expand quickly as revenue grows.',
+    mistake: '“Other income” — interest on cash, investment gains — should not be mixed into operating profit. It can make a weak core business look better than it is.',
+    questions: [
+      Q('g-om-1', 'EBIT ₹90 crore, revenue ₹600 crore. What is the operating margin?', ['15%', '6.7%', '9%', '66.7%'], '90 ÷ 600 = 15%.'),
+      Q('g-om-2', 'Why should “other income” be kept separate from operating profit?',
+        ['It does not come from the core business, so it can hide weak operations', 'Other income is illegal', 'It is always negative', 'SEBI requires adding it twice'], 'Judge the core business on its own.'),
+    ],
+  },
+  {
+    id: 'revenue-growth', term: 'Revenue growth', aka: ['Sales growth', 'Top-line growth', 'CAGR'], category: 'Profitability',
+    simple: 'How fast a company’s sales are increasing.',
+    detail: 'Revenue growth compares this period’s revenue with an earlier period. Compare a quarter with the same quarter last year (year-on-year, YoY) to avoid seasonal effects. Over several years, use CAGR (compound annual growth rate). Growth can come from selling more units (volume), raising prices, or acquisitions.',
+    formula: 'Growth % = (Current − Previous) ÷ Previous × 100;  CAGR = (End ÷ Start)^(1 ÷ years) − 1',
+    example: { rows: [['Revenue, year 1', '₹1,000 crore'], ['Revenue, year 4', '₹1,331 crore'], ['Total growth', '33.1%'], ['3-year CAGR', '(1,331 ÷ 1,000)^(1/3) − 1 = 10%'], ['This Q2 vs last year’s Q2', '₹380 crore vs ₹340 crore = +11.8% YoY']] },
+    significance: 'Lasting profit growth needs revenue growth — cost-cutting alone has limits.',
+    mistake: 'Revenue growth without profit or cash flow is not success. Check whether growth comes only from price increases (with flat volumes) or from acquisitions, and compare it with inflation.',
+    questions: [
+      Q('g-rg-1', 'Revenue rises from ₹200 crore to ₹250 crore. What is the growth?', ['25%', '20%', '50%', '2.5%'], '(250 − 200) ÷ 200 = 25%.'),
+      Q('g-rg-2', 'Revenue doubles from ₹100 crore to ₹200 crore in 3 years. Roughly what is the CAGR?', ['About 26%', '33.3%', '100%', '50%'], '2^(1/3) ≈ 1.26, so about 26% a year.'),
+    ],
+  },
+  {
+    id: 'working-capital', term: 'Working capital', aka: ['Net working capital', 'Receivable days'], category: 'Balance sheet & cash',
+    simple: 'Money tied up in running the business day to day.',
+    detail: 'Working capital = current assets − current liabilities. Current assets include inventory, receivables (money customers owe) and cash; current liabilities include payables (money owed to suppliers) and short-term debt. A business that needs a lot of working capital must keep investing cash just to grow. Related measures: receivable days, inventory days, payable days and the cash conversion cycle.',
+    formula: 'Working capital = Current assets − Current liabilities;  Receivable days = Receivables ÷ Revenue × 365',
+    example: { rows: [['Inventory', '₹300 crore'], ['Receivables', '₹250 crore'], ['Cash', '₹50 crore'], ['Payables', '₹200 crore'], ['Short-term debt', '₹100 crore'], ['Working capital', '600 − 300 = ₹300 crore'], ['Revenue ₹1,825 crore', 'Receivable days = 250 ÷ 1,825 × 365 = 50 days']] },
+    significance: 'Rising receivable days can mean the company is giving customers easier credit to push sales, or struggling to collect. Businesses where customers pay upfront can have negative working capital and grow without much extra money.',
+    mistake: 'More working capital is not “more strength” — often it means cash stuck in unsold stock and unpaid bills. Watch the trend in days, not just the rupee amount.',
+    questions: [
+      Q('g-wc-1', 'Current assets ₹400 crore, current liabilities ₹250 crore. What is working capital?', ['₹150 crore', '₹650 crore', '₹1.6 crore', '₹250 crore'], '400 − 250 = ₹150 crore.'),
+      Q('g-wc-2', 'Receivable days rise from 45 to 90 over two years while sales grow modestly. What might this signal?',
+        ['Customers are paying more slowly — possible collection problems or aggressive selling', 'Better cash generation', 'Lower debt', 'Higher dividends'], 'Doubling collection time ties up a lot more cash.'),
+    ],
+  },
+  {
+    id: 'promoter-holding', term: 'Promoter holding', aka: ['Shareholding pattern'], category: 'Ownership',
+    simple: 'The percentage of a company’s shares owned by its founders or controlling group.',
+    detail: 'Promoters are the people or entities in control of a company. Listed companies disclose their shareholding pattern every quarter on the NSE and BSE websites: promoters, foreign investors, domestic institutions and the public. Minimum public shareholding rules require at least 25% public holding, so promoters can hold at most 75% in most listed companies.',
+    example: { rows: [['Total shares', '100 crore'], ['Promoter group', '55 crore (55%)'], ['FPIs', '18 crore (18%)'], ['DIIs', '15 crore (15%)'], ['Public and others', '12 crore (12%)'], ['Change from last quarter', 'Promoters 58% → 55% (sold 3%)']] },
+    significance: 'High, stable promoter holding suggests the owners have “skin in the game”. Steady promoter buying can be a positive sign; persistent selling deserves an explanation. Rising institutional holdings show professional interest.',
+    mistake: 'Low promoter holding is not automatically bad — many well-run, professionally managed companies have no promoter at all. And high holding does not guarantee good governance: check related-party transactions and how minority shareholders are treated.',
+    questions: [
+      Q('g-ph-1', 'Promoters own 62 crore of 100 crore shares. What is the promoter holding?', ['62%', '38%', '6.2%', '100%'], '62 ÷ 100 = 62%.'),
+      Q('g-ph-2', 'Where can you find a listed company’s shareholding pattern?', ['In its quarterly filings on the NSE and BSE websites', 'Only in newspapers', 'On the RBI website', 'It is kept secret'], 'Shareholding patterns are mandatory quarterly disclosures.'),
+    ],
+  },
+  {
+    id: 'pledged-shares', term: 'Pledged shares', aka: ['Promoter pledge'], category: 'Ownership',
+    simple: 'Promoter shares given to lenders as security for loans.',
+    detail: 'Promoters sometimes pledge their shares to borrow money. If the share price falls sharply, lenders may ask for more security or sell the pledged shares in the market. That selling can push the price down further and trigger more selling — a downward spiral. Pledges are disclosed in the shareholding pattern, as a percentage of promoter holding.',
+    formula: 'Pledge % = Pledged promoter shares ÷ Total promoter shares × 100',
+    example: { rows: [['Promoter holding', '50 crore shares'], ['Pledged', '20 crore shares'], ['Pledge %', '40% of promoter holding'], ['Loan', '₹1,000 crore against pledged shares worth ₹2,000 crore (price ₹100)'], ['Price falls to ₹60', 'Pledged value ₹1,200 crore → lender may sell or demand more']] },
+    significance: 'High or rising pledging is a significant risk signal and often points to financial stress at the promoter level. Pledges being released is generally a positive sign.',
+    mistake: 'Pledging is not always about distress — but outsiders cannot see the promoter’s private finances. Treat a high pledge as a risk that needs explaining, not something to ignore.',
+    questions: [
+      Q('g-ps-1', 'Promoters hold 40 crore shares, of which 10 crore are pledged. What is the pledge %?', ['25%', '10%', '40%', '4%'], '10 ÷ 40 = 25%.'),
+      Q('g-ps-2', 'Why can heavy pledging speed up a share-price fall?',
+        ['Lenders may sell pledged shares as the price falls, adding selling pressure', 'Pledged shares are cancelled', 'The company must buy them back', 'SEBI freezes the price'], 'Forced selling feeds on itself.'),
+    ],
+  },
+  {
+    id: 'intrinsic-value', term: 'Intrinsic value', aka: ['DCF', 'Margin of safety'], category: 'Valuation',
+    simple: 'An estimate of what a business is truly worth, based on the cash it will generate.',
+    detail: 'Intrinsic value is the present value of all the cash a business is expected to produce in the future. A discounted cash flow (DCF) model projects future free cash flows and discounts them back at a required return. The market price can be above or below intrinsic value. Value investors look for a **margin of safety** — buying well below their estimate to allow for mistakes.',
+    formula: 'Value = Σ FCFₜ ÷ (1 + r)ᵗ;  for steady growth forever: Value = Next year’s FCF ÷ (r − g)',
+    example: { rows: [['Next year’s FCF', '₹100 crore'], ['Required return (r)', '12%'], ['Long-term growth (g)', '6%'], ['Business value', '100 ÷ (0.12 − 0.06) ≈ ₹1,667 crore'], ['If g = 8% instead', '100 ÷ 0.04 = ₹2,500 crore'], ['With a 30% margin of safety', 'Buy only below ≈ ₹1,167 crore']] },
+    significance: 'It changes the question from “will the price go up?” to “what is this business worth?”. Comparing intrinsic value with market cap shows how much growth the market is already expecting.',
+    mistake: 'Intrinsic value is an estimate, not a fact. Small changes in assumptions change the answer enormously — above, raising growth from 6% to 8% raised the value by 50%. A precise spreadsheet is not the same as an accurate one.',
+    questions: [
+      Q('g-iv-1', 'Next year’s FCF ₹50 crore, r = 10%, g = 5%. Using FCF ÷ (r − g), what is the value?', ['₹1,000 crore', '₹500 crore', '₹333 crore', '₹5,000 crore'], '50 ÷ (0.10 − 0.05) = 50 ÷ 0.05 = ₹1,000 crore.'),
+      Q('g-iv-2', 'What is a margin of safety?', ['Buying well below your estimated value to allow for errors', 'A stop-loss order', 'A minimum dividend', 'A bank deposit guarantee'], 'It protects you when your estimate turns out to be too optimistic.'),
+    ],
+  },
+]
+
+export const termById: Record<string, Term> = Object.fromEntries(terms.map((t) => [t.id, t]))
+
+// Auto-generated "match the definition" question for every term (stable options).
+export const definitionQuestions = terms.map((t, i) => {
+  const n = terms.length
+  const others = [3, 7, 11].map((o) => terms[(i + o) % n].term)
+  return Q(`g-def-${t.id}`, `Which term matches this description? “${t.simple}”`, [t.term, ...others], `${t.term}: ${t.simple}`)
+})
+
+export const glossaryQuestions = [...terms.flatMap((t) => t.questions), ...definitionQuestions]
