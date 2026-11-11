@@ -35,7 +35,7 @@ export function LearnPage() {
           )
         })}
       </div>
-      <h2 className="mt-6 mb-2 text-sm font-semibold text-muted">Coming in later phases</h2>
+      {upcomingModules.length > 0 && <h2 className="mt-6 mb-2 text-sm font-semibold text-muted">Coming in later phases</h2>}
       <div className="grid gap-2">
         {upcomingModules.map((m) => (
           <div key={m.num} className="flex items-center justify-between rounded-xl border border-dashed border-line px-4 py-3 text-sm text-muted">

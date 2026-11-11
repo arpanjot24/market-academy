@@ -76,6 +76,11 @@ export function HomePage() {
           <div className="mt-0.5 text-xs text-muted">SENSEX, sectors, watchlists, company financials</div>
         </Card>
       </div>
+      <Card className="mb-3" onClick={() => go('/trade')}>
+        <div className="text-xs font-semibold uppercase tracking-wide text-up">New · Trading simulator</div>
+        <div className="mt-1 text-base font-semibold">Paper trade with {state.sim.practice ? 'your' : '₹1,00,000 of'} virtual money</div>
+        <div className="mt-0.5 text-sm text-muted">Every trade is scored on your process and risk management, not just profit.</div>
+      </Card>
       <Card className="mb-3" onClick={() => go('/charts')}>
         <div className="text-xs font-semibold uppercase tracking-wide text-accent">Charts</div>
         <div className="mt-1 text-base font-semibold">Candle interpreter, replay and indicator lab</div>
@@ -102,7 +107,7 @@ export function HomePage() {
           ['Phase 1', 'Lessons, glossary, quizzes, revision, progress', 'Available'],
           ['Phase 2', 'Candlestick charts, pattern illustrations, replay, indicators', 'Available'],
           ['Phase 3', 'Market dashboard, company analysis, news, watchlists', 'Available'],
-          ['Phase 4', 'Paper trading, virtual portfolio, risk & analytics', 'Next'],
+          ['Phase 4', 'Paper trading, virtual portfolio, risk & analytics', 'Available'],
         ].map(([p, d, s]) => (
           <div key={p} className="flex items-center gap-3 rounded-xl border border-line bg-card px-4 py-3">
             <div className="w-16 shrink-0 text-sm font-semibold">{p}</div>

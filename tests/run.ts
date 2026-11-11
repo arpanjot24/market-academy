@@ -5,6 +5,8 @@ import { illustrations } from '../src/lib/chart/illustrations.ts'
 import { dailyCandles, intradayCandles, instruments } from '../src/lib/chart/sim.ts'
 import type { Candle } from '../src/lib/chart/types.ts'
 import { computeRatios } from '../src/lib/fundamentals.ts'
+import { charges, taxEstimate } from '../src/lib/sim/charges.ts'
+import { newAccount, placeOrder, validateOrder, advanceDay, executeBuy, executeSell, setStopTarget, updateManualPrice, metrics, maxDrawdown, positionSize } from '../src/lib/sim/engine.ts'
 
 let pass = 0, fail = 0
 const ok = (cond: boolean, name: string, extra = '') => { if (cond) pass++; else { fail++; console.log('FAIL', name, extra) } }
@@ -114,6 +116,67 @@ for (const [id, ill] of Object.entries(illustrations)) {
   const bank = Object.fromEntries(computeRatios({ debt: 9000, equity: 1000, ebit: 500 }, true).map((x) => [x.key, x]))
   ok(bank.de.value === null && bank.roce.value === null, 'D/E and ROCE suppressed for financials')
   ok(computeRatios({}).every((x) => x.value === null), 'empty worksheet gives no numbers')
+}
+
+// ---------- Charges and tax ----------
+{
+  const b = charges('buy', 100000, 'zero', 'delivery')
+  // STT 100 + exchange 2.97 + SEBI 0.10 + stamp 15 + GST 18% of (2.97+0.10)=0.55 → 118.62
+  ok(b.stt === 100 && b.stamp === 15 && b.brokerage === 0 && near(b.total, 118.62, 0.02), 'delivery buy charges', JSON.stringify(b))
+  const s = charges('sell', 100000, 'zero', 'delivery')
+  ok(s.stamp === 0 && s.dp === 15.93 && near(s.total, 100 + 2.97 + 0.1 + 0.55 + 15.93, 0.02), 'delivery sell charges', JSON.stringify(s))
+  const i = charges('sell', 100000, 'zero', 'intraday')
+  ok(i.brokerage === 20 && i.stt === 25 && i.dp === 0, 'intraday sell charges')
+  const f = charges('buy', 100000, 'full', 'delivery')
+  ok(f.brokerage === 300 && near(f.gst, (300 + 2.97 + 0.1) * 0.18, 0.02), 'full-service brokerage + GST')
+  const tx = taxEstimate(50000, 200000)
+  ok(tx.stcg === 10000 && tx.ltcg === 9375 && near(tx.cess, 775), 'tax estimate (STCG 20%, LTCG 12.5% above 1.25L, 4% cess)')
+}
+
+// ---------- Paper-trading engine ----------
+{
+  const day = (o: number, h: number, l: number, c: number, t: number) => ({ time: t * 86400, open: o, high: h, low: l, close: c })
+  const series: Record<number, ReturnType<typeof day>> = {
+    0: day(100, 101, 99, 100, 0), 1: day(100, 102, 99, 101, 1), 2: day(101, 104, 100, 103, 2),
+    3: day(103, 112, 102, 111, 3), 4: day(95, 96, 90, 92, 4),
+  }
+  const at = (_s: string, d: number) => series[d]
+  let acc = newAccount('practice', 100000, 0, 0)
+  const plan = { setup: 'breakout', reason: 'Breaking above resistance on high volume' }
+  const ps = positionSize(100000, 0.01, 100, 95)
+  ok(ps.qty === 200 && ps.risk === 1000, 'position size: 1% risk, ₹5 stop → 200 shares')
+  ok(validateOrder(acc, { sym: 'X', side: 'buy', type: 'market', qty: 2000, plan }, 100) !== null, 'rejects buy without enough cash')
+  ok(validateOrder(acc, { sym: 'X', side: 'sell', type: 'market', qty: 1, plan }, 100) !== null, 'rejects short selling')
+  ok(validateOrder(acc, { sym: 'X', side: 'buy', type: 'market', qty: 10, stop: 101, plan }, 100) !== null, 'rejects stop above entry')
+  acc = placeOrder(acc, { sym: 'X', side: 'buy', type: 'market', qty: 200, stop: 95, target: 110, plan }, 0)
+  let r = advanceDay(acc, at, ['X']); acc = r.acc
+  const fillPx = Math.round(100 * 1.0005 * 20) / 20
+  ok(acc.positions.X?.qty === 200 && acc.positions.X.avg === fillPx, 'market order fills at next open + slippage', JSON.stringify(acc.positions.X))
+  ok(near(acc.cash, 100000 - 200 * fillPx - charges('buy', 200 * fillPx).total, 0.01), 'cash reduced by value + charges')
+  r = advanceDay(acc, at, ['X']); acc = r.acc
+  ok(!!acc.positions.X, 'no exit while price stays inside stop/target')
+  r = advanceDay(acc, at, ['X']); acc = r.acc
+  ok(!acc.positions.X && acc.closed[0].exitVia === 'target' && acc.closed[0].exit === 110, 'target fills at target price', JSON.stringify(acc.closed[0]?.exit))
+  const t0 = acc.closed[0]
+  ok(near(t0.grossPnl, (110 - fillPx) * 200, 0.01) && t0.netPnl < t0.grossPnl && t0.rMultiple !== null && t0.rMultiple > 1.5, 'closed trade P&L and R multiple', JSON.stringify([t0.netPnl, t0.rMultiple]))
+  ok(t0.review.score === 7, 'perfect process score for a planned trade', JSON.stringify(t0.review.notes.filter((n) => !n.ok)))
+  // Gap through a stop
+  let g = newAccount('practice', 100000, 2, 2 * 86400)
+  g = executeBuy(g, 'X', 100, 103, 2 * 86400, 'market', plan, 100000, 98)
+  g = { ...g, clock: 3 }
+  const rg = advanceDay(g, at, ['X'])
+  ok(rg.acc.closed[0].exitVia === 'stop' && rg.acc.closed[0].exit < 98 && rg.events[0].includes('GAPPED'), 'gap below stop fills at the open, worse than the stop', JSON.stringify(rg.acc.closed[0]?.exit))
+  // Bad process: no stop, huge size, widened stop
+  let bad = newAccount('real', 100000, 0, 0)
+  bad = executeBuy(bad, 'Y', 900, 100, 0, 'manual', { setup: 'none', reason: 'tip' }, 100000)
+  bad = setStopTarget(bad, 'Y', 90); bad = setStopTarget(bad, 'Y', 80)
+  bad = executeSell(bad, 'Y', 900, 85, 86400, 'manual')
+  const br = bad.closed[0].review
+  ok(br.score <= 2 && bad.closed[0].netPnl < 0, 'poor process scores low', JSON.stringify(br))
+  ok(updateManualPrice(executeBuy(newAccount('real', 1e5, 0, 0), 'Z', 10, 100, 0, 'manual', plan, 1e5, 95), 'Z', 94, 1).acc.closed[0]?.exitVia === 'stop', 'manual price update triggers stop')
+  ok(near(maxDrawdown([100, 120, 90, 130, 117]), 0.25), 'max drawdown 25% (120 → 90)')
+  const m = metrics(acc, () => undefined)
+  ok(m.trades === 1 && m.winRate === 1 && m.realised === t0.netPnl, 'metrics summary')
 }
 
 // ---------- Simulated data sanity ----------

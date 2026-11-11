@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { idbGet, idbSet } from './db'
 import { schedule } from './srs'
+import type { Account } from './sim/engine'
 
 export type Theme = 'dark' | 'light' | 'system'
 export interface LessonProgress { step: number; attempts: number; bestScore?: number; lastScore?: number; completedAt?: number }
@@ -27,6 +28,7 @@ export interface AppState {
   settings: { theme: Theme; showUS: boolean }
   watchlists: Watchlist[]
   worksheets: Record<string, Worksheet>
+  sim: { practice: Account | null; real: Account | null }
   lessons: Record<string, LessonProgress>
   answers: Record<string, AnswerStat>
   srs: Record<string, SrsItem>
@@ -43,6 +45,7 @@ export const defaultState = (): AppState => ({
   settings: { theme: 'dark', showUS: false },
   watchlists: [{ id: 'main', name: 'My watchlist', symbols: [] }],
   worksheets: {},
+  sim: { practice: null, real: null },
   lessons: {},
   answers: {},
   srs: {},
@@ -65,6 +68,7 @@ export function normalize(raw: any): AppState {
     settings: { ...d.settings, ...obj(raw.settings, {}) },
     watchlists: Array.isArray(raw.watchlists) && raw.watchlists.length ? raw.watchlists : d.watchlists,
     worksheets: obj(raw.worksheets, {}) as AppState['worksheets'],
+    sim: { practice: raw.sim?.practice ?? null, real: raw.sim?.real ?? null },
     lessons: obj(raw.lessons, {}) as AppState['lessons'],
     answers: obj(raw.answers, {}) as AppState['answers'],
     srs: obj(raw.srs, {}) as AppState['srs'],
@@ -89,6 +93,7 @@ function touchStreak(s: AppState): AppState {
 function makeActions(set: (fn: (s: AppState) => AppState) => void) {
   return {
     setTheme: (theme: Theme) => set((s) => ({ ...s, settings: { ...s.settings, theme } })),
+    setAccount: (mode: 'practice' | 'real', acc: Account | null) => set((s) => ({ ...s, sim: { ...s.sim, [mode]: acc } })),
     setShowUS: (showUS: boolean) => set((s) => ({ ...s, settings: { ...s.settings, showUS } })),
     toggleWatch: (listId: string, symbol: string) =>
       set((s) => ({

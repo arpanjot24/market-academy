@@ -12,8 +12,10 @@ export const sections: { key: string; icon: string; title: string; href: string;
   { key: 'candles', icon: '🕯️', title: 'Candle academy', href: '/candles' },
   { key: 'technical', icon: '📊', title: 'Technical analysis', href: '/technical' },
   { key: 'fundamental', icon: '🏢', title: 'Fundamental analysis', href: '/fundamentals' },
-  { key: 'simulator', icon: '🎮', title: 'Trading simulator', href: '/soon/simulator', phase: 4 },
-  { key: 'portfolio', icon: '💼', title: 'Virtual portfolio', href: '/soon/portfolio', phase: 4 },
+  { key: 'simulator', icon: '🎮', title: 'Trading simulator', href: '/trade' },
+  { key: 'portfolio', icon: '💼', title: 'Virtual portfolio', href: '/portfolio/practice' },
+  { key: 'performance', icon: '📉', title: 'Performance & process', href: '/performance/practice' },
+  { key: 'risk', icon: '🛡️', title: 'Risk tools & calculators', href: '/risk-tools' },
   { key: 'news', icon: '📰', title: 'Market news & briefing', href: '/news' },
   { key: 'watchlists', icon: '⭐', title: 'Watchlists', href: '/watchlists' },
   { key: 'charts', icon: '🕯️', title: 'Charts & interpreter', href: '/charts' },
@@ -40,8 +42,6 @@ export function MorePage() {
 }
 
 const soon: Record<string, { title: string; phase: number; items: string[]; data: string }> = {
-  simulator: { title: 'Paper trading simulator', phase: 4, items: ['Configurable virtual capital, starting at ₹1,00,000', 'Virtual buy/sell, stop-loss, targets, position sizing', 'Risk/reward and Indian transaction-cost estimates', 'Trades judged on reasoning and risk management, not just profit'], data: 'Purely virtual. It will never connect to a real brokerage account.' },
-  portfolio: { title: 'Virtual portfolio', phase: 4, items: ['Holdings and average purchase price', 'Realised and unrealised profit/loss, allocation', 'Win rate, average win/loss, maximum drawdown, total return'], data: 'Stored only on your phone, included in your backup file.' },
 }
 
 export function SoonPage({ id }: { id: string }) {
@@ -149,7 +149,7 @@ export function SettingsPage() {
 
       <h2 className="mb-2 text-sm font-semibold text-muted">About</h2>
       <Card className="mb-5 text-sm leading-relaxed text-muted">
-        <p className="mb-2"><b className="text-fg">Market Academy · Phase 3</b> — free, open-source tools only, no accounts, no ads. Charts by TradingView Lightweight Charts (Apache-2.0).</p>
+        <p className="mb-2"><b className="text-fg">Market Academy · all 4 phases</b> — free, open-source tools only, no accounts, no ads. Charts by TradingView Lightweight Charts (Apache-2.0).</p>
         <p className="mb-2">Market data: TradingView free widgets (BSE, end-of-day or delayed; NSE is not licensed for free widgets). News: public RSS feeds of RBI, SEBI, The Economic Times, Mint, Business Standard and Moneycontrol — headlines link to the original source. Practice charts use simulated data and are labelled as such.</p>
         <p className="mb-2">Educational content was written in November 2026 from general knowledge of Indian market rules in effect up to mid-2026. Rules, rates and charges change — verify current details at sebi.gov.in, nseindia.com, bseindia.com and rbi.org.in.</p>
         <p>Numerical examples use illustrative numbers unless a source is named. Nothing in this app is investment advice.</p>

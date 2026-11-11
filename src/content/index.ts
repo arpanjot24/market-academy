@@ -3,6 +3,7 @@ import { module2Lessons } from './module2'
 import { module3Lessons } from './module3'
 import { module4Lessons, module5Lessons } from './module45'
 import { module6Lessons } from './module6'
+import { module7Lessons, module8Lessons } from './module78'
 import { patternIdQuestions, patterns } from './patterns'
 import { terms, glossaryQuestions } from './glossary'
 import type { Lesson, LessonDef, Module, Question } from './types'
@@ -18,13 +19,12 @@ export const modules: Module[] = [
   mk('m4', 4, 'Candlestick education', 'Candle anatomy, 19 patterns, and how patterns develop, confirm and fail.', module4Lessons),
   mk('m5', 5, 'Technical indicators', 'SMA, EMA, RSI, MACD, Bollinger Bands, VWAP, Fibonacci, ATR, ADX, stochastic and volume.', module5Lessons),
   mk('m6', 6, 'Fundamental analysis', 'Financial statements, annual reports, quality checks, governance, moats and valuation.', module6Lessons),
+  mk('m7', 7, 'Trading strategies', 'Intraday to long-term, trend, momentum, breakout, pullback, mean reversion, levels, volume and backtesting.', module7Lessons),
+  mk('m8', 8, 'Risk management', 'Capital preservation, position sizing, stops, drawdown, leverage, psychology, Indian charges and tax.', module8Lessons),
 ]
 
 // Modules planned for later phases (shown on the Learn screen, clearly labelled).
-export const upcomingModules = [
-  { num: 7, title: 'Trading strategies', phase: 4 },
-  { num: 8, title: 'Risk management, charges and tax', phase: 4 },
-]
+export const upcomingModules: { num: number; title: string; phase: number }[] = []
 
 export const allLessons: Lesson[] = modules.flatMap((m) => m.lessons)
 export const lessonById: Record<string, Lesson> = Object.fromEntries(allLessons.map((l) => [l.id, l]))
